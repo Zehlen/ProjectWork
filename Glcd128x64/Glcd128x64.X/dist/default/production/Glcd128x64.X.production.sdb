@@ -1,0 +1,402 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"19 D:\Mplabe\Glcd128x64\Glcd128x64.X\ISR.c
+[e E1499 . `uc
+false 0
+true 1
+]
+"14 D:\Mplabe\Glcd128x64\Glcd128x64.X\gui.c
+[e E236 . `uc
+false 0
+true 1
+]
+"7 D:\Mplabe\Glcd128x64\Glcd128x64.X\graphics.c
+[e E104 . `uc
+false 0
+true 1
+]
+"10 D:\Mplabe\Glcd128x64\Glcd128x64.X\system_flow.c
+[e E101 . `uc
+false 0
+true 1
+]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"3 D:\Mplabe\Glcd128x64\Glcd128x64.X\graphics.c
+[v _G_LCDInit_Mth G_LCDInit_Mth `(v  1 e 1 0 ]
+"75
+[v _G_GlcdWrite_Mth G_GlcdWrite_Mth `(v  1 e 1 0 ]
+"91
+[v _G_DrawChar_Mth G_DrawChar_Mth `(uc  1 e 1 0 ]
+"114
+[v _G_CopyMsg_Mth G_CopyMsg_Mth `(uc  1 e 1 0 ]
+"129
+[v _G_WriteMsg_Mth G_WriteMsg_Mth `(v  1 e 1 0 ]
+"137
+[v _G_GLCDWriteStr_Mth G_GLCDWriteStr_Mth `(v  1 e 1 0 ]
+"150
+[v _G_WriteBufferData_Mth G_WriteBufferData_Mth `(v  1 e 1 0 ]
+"187
+[v _G_SetRow_Mth G_SetRow_Mth `(v  1 e 1 0 ]
+"193
+[v _G_SetColumn_Mth G_SetColumn_Mth `(v  1 e 1 0 ]
+"214
+[v _G_GLCDClearDisplay_Mth G_GLCDClearDisplay_Mth `(v  1 e 1 0 ]
+"240
+[v _AppMessageLen AppMessageLen `(uc  1 e 1 0 ]
+"252
+[v _G_ClearGLCEDataBuffer_Mth G_ClearGLCEDataBuffer_Mth `(v  1 e 1 0 ]
+"263
+[v _G_ClearGLCDCharBuffer_Mth G_ClearGLCDCharBuffer_Mth `(v  1 e 1 0 ]
+"272
+[v _SetDelayUs_Mth SetDelayUs_Mth `(v  1 e 1 0 ]
+"10 D:\Mplabe\Glcd128x64\Glcd128x64.X\gui.c
+[v _G_CreateHomePage G_CreateHomePage `(v  1 e 1 0 ]
+"3 D:\Mplabe\Glcd128x64\Glcd128x64.X\ISR.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"11 D:\Mplabe\Glcd128x64\Glcd128x64.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"2 D:\Mplabe\Glcd128x64\Glcd128x64.X\system.c
+[v _G_PowrOn_Mth G_PowrOn_Mth `(v  1 e 1 0 ]
+"8
+[v _PortConfig_Mth PortConfig_Mth `(v  1 e 1 0 ]
+"20
+[v _TmrConfig_Mth TmrConfig_Mth `(v  1 e 1 0 ]
+"25
+[v _IntrptConfig_Mth IntrptConfig_Mth `(v  1 e 1 0 ]
+"8 D:\Mplabe\Glcd128x64\Glcd128x64.X\system_flow.c
+[v _G_initgraphicsVriables_Mth G_initgraphicsVriables_Mth `(v  1 e 1 0 ]
+"22
+[v _M_SystemFlow_Mth M_SystemFlow_Mth `(v  1 e 1 0 ]
+"18 D:\Mplabe\Glcd128x64\Glcd128x64.X/app_msg.h
+[v _AppMessages AppMessages `DC[20][20]uc  1 e 400 0 ]
+"12 D:\Mplabe\Glcd128x64\Glcd128x64.X/font_calibri.h
+[v _Calibri9x10 Calibri9x10 `DC[96][19]ui  1 e 3648 0 ]
+[s S100 __graphics 48 `uc 1 InitGraphics 1 0 :1:0 
+`uc 1 StartDelayCount 1 0 :1:1 
+`uc 1 StartFrameDelayCount 1 0 :1:2 
+`uc 1 DelayTimeout 1 0 :1:3 
+`uc 1 FrameDelayTimeout 1 0 :1:4 
+`uc 1 FontsInverted 1 0 :1:5 
+`uc 1 Debounceperiod 1 0 :1:6 
+`uc 1 KeyPressed 1 0 :1:7 
+`uc 1 KeyReleased 1 1 :1:0 
+`uc 1 KeyValue 1 1 :4:1 
+`uc 1 PreKeyValue 1 2 :4:0 
+`uc 1 Updatedisplay 1 2 :1:4 
+`uc 1 G_SelModeFlag 1 2 :1:5 
+`uc 1 EPROM_WriteFlag 1 2 :1:6 
+`uc 1 BuzzerStartFlag 1 2 :1:7 
+`VEuc 1 VACEvent_Ui8 1 3 `VEuc 1 G_SelCnt_Ui8 1 4 `VEuc 1 DebounceCount 1 5 `VEuc 1 DebounceCounter 1 6 `VEuc 1 Arrow_X 1 7 `VEuc 1 Arrow_Y 1 8 `VEuc 1 G_ErrorPer_Ui8 1 9 `VEuc 1 G_DefTimeData_Ui8 1 10 `VEuc 1 BuzzerOnOffConunt_Ui8 1 11 `VEuc 1 G_GLCD_InitStatus_Ui8 1 12 `VEuc 1 RowStrtAddr_Ui8 1 13 `VEuc 1 ColStrtAddr_Ui8 1 14 `VEuc 1 RowEndAddr_Ui8 1 15 `VEuc 1 ColEndAddr_Ui8 1 16 `VEuc 1 TotalColWrite_Ui8 1 17 `VEuc 1 TotalRowWrite_Ui8 1 18 `VEuc 1 GLcdStrEvent_Ui8 1 19 `VEui 1 LcdUpadetCounter_Ui16 2 20 `VEui 1 LcdUpadetCount_Ui16 2 22 `VEui 1 Delay_count_Ui16 2 24 `VEui 1 Delay_counter_Ui16 2 26 `VEui 1 FrameDelayCount_Ui16 2 28 `VEui 1 FrameDelayCounter_Ui16 2 30 `VEui 1 G_MotorTime_Ui16 2 32 `VEui 1 G_HalfMotorTime_Ui16 2 34 `VEui 1 BuzzerCount_Ui16 2 36 `VEui 1 GPIO_ReadValue_Ui16 2 38 `VEui 1 GPIO_WriteValue_Ui16 2 40 `VEui 1 TotalColWrite_Ui16 2 42 `VEl 1 G_BatADC_Ln 4 44 ]
+"21 D:\Mplabe\Glcd128x64\Glcd128x64.X/graphics.h
+[v _graphics graphics `VES100  1 e 48 0 ]
+[s S269 __KeyPad 6 `uc 1 G_DebncCntr_ui8 1 0 `uc 1 G_DebncCnt_ui8 1 1 `uc 1 G_PrsedKeyVal_Ui8 1 2 `uc 1 G_CnfrmkeyVal_Ui8 1 3 `ui 1 G_GetKeyVal_Ui16 2 4 ]
+"23
+[s S258 __KeyPadFalg 1 `uc 1 Key1_Flag 1 0 :1:0 
+`uc 1 Key2_Flag 1 0 :1:1 
+`uc 1 Key3_Flag 1 0 :1:2 
+`uc 1 Key4_Flag 1 0 :1:3 
+`uc 1 KeyPressedFlag 1 0 :1:4 
+`uc 1 KeyReleasedFlag 1 0 :1:5 
+`uc 1 KeyDectedFlag 1 0 :1:6 
+]
+[s S275 __KeyPadvars 7 `S269 1 KeyPad 6 0 `S258 1 KeyPadFlags 1 6 ]
+[v _KeyPadVars KeyPadVars `S275  1 e 7 0 ]
+"45
+[v _G_GLCDData64_Ui8Arr G_GLCDData64_Ui8Arr `VE[4][20]uc  1 e 80 0 ]
+"17 D:\Mplabe\Glcd128x64\Glcd128x64.X/gui.h
+[v _G_CharBuffer_Ui8Arr G_CharBuffer_Ui8Arr `[16]uc  1 e 16 0 ]
+"59 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S403 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"307
+[u S412 . 1 `S403 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES412  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"414
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S431 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S436 . 1 `S431 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES436  1 e 1 @9 ]
+"459
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S67 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S76 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S81 . 1 `S67 1 . 1 0 `S76 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES81  1 e 1 @11 ]
+"1346
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1664
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"11 D:\Mplabe\Glcd128x64\Glcd128x64.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"19
+} 0
+"22 D:\Mplabe\Glcd128x64\Glcd128x64.X\system_flow.c
+[v _M_SystemFlow_Mth M_SystemFlow_Mth `(v  1 e 1 0 ]
+{
+"45
+} 0
+"3 D:\Mplabe\Glcd128x64\Glcd128x64.X\graphics.c
+[v _G_LCDInit_Mth G_LCDInit_Mth `(v  1 e 1 0 ]
+{
+"73
+} 0
+"10 D:\Mplabe\Glcd128x64\Glcd128x64.X\gui.c
+[v _G_CreateHomePage G_CreateHomePage `(v  1 e 1 0 ]
+{
+"37
+} 0
+"129 D:\Mplabe\Glcd128x64\Glcd128x64.X\graphics.c
+[v _G_WriteMsg_Mth G_WriteMsg_Mth `(v  1 e 1 0 ]
+{
+[v G_WriteMsg_Mth@M_Msg_Ui8 M_Msg_Ui8 `uc  1 a 1 wreg ]
+"131
+[v G_WriteMsg_Mth@L_MsgCount_Ui8 L_MsgCount_Ui8 `uc  1 a 1 23 ]
+"129
+[v G_WriteMsg_Mth@M_Msg_Ui8 M_Msg_Ui8 `uc  1 a 1 wreg ]
+[v G_WriteMsg_Mth@M_X_Val_Ui8 M_X_Val_Ui8 `uc  1 p 1 20 ]
+[v G_WriteMsg_Mth@M_Y_Val_Ui8 M_Y_Val_Ui8 `uc  1 p 1 21 ]
+"131
+[v G_WriteMsg_Mth@M_Msg_Ui8 M_Msg_Ui8 `uc  1 a 1 22 ]
+"135
+} 0
+"137
+[v _G_GLCDWriteStr_Mth G_GLCDWriteStr_Mth `(v  1 e 1 0 ]
+{
+[v G_GLCDWriteStr_Mth@str str `*.4uc  1 a 1 wreg ]
+"140
+[v G_GLCDWriteStr_Mth@i i `i  1 a 2 15 ]
+"137
+[v G_GLCDWriteStr_Mth@str str `*.4uc  1 a 1 wreg ]
+[v G_GLCDWriteStr_Mth@count count `uc  1 p 1 12 ]
+[v G_GLCDWriteStr_Mth@L_Xpos_Ui8 L_Xpos_Ui8 `uc  1 p 1 13 ]
+"140
+[v G_GLCDWriteStr_Mth@str str `*.4uc  1 a 1 14 ]
+"148
+} 0
+"91
+[v _G_DrawChar_Mth G_DrawChar_Mth `(uc  1 e 1 0 ]
+{
+[v G_DrawChar_Mth@L_CharData_Ui8 L_CharData_Ui8 `uc  1 a 1 wreg ]
+"99
+[v G_DrawChar_Mth@L_ColCounter_Ui8 L_ColCounter_Ui8 `uc  1 a 1 7 ]
+"95
+[v G_DrawChar_Mth@L_FontColData L_FontColData `VEui  1 a 2 8 ]
+"93
+[v G_DrawChar_Mth@L_FontIndex_Ui8 L_FontIndex_Ui8 `uc  1 a 1 6 ]
+"94
+[v G_DrawChar_Mth@L_FontSize_Ui8 L_FontSize_Ui8 `uc  1 a 1 5 ]
+"91
+[v G_DrawChar_Mth@L_CharData_Ui8 L_CharData_Ui8 `uc  1 a 1 wreg ]
+"93
+[v G_DrawChar_Mth@L_CharData_Ui8 L_CharData_Ui8 `uc  1 a 1 4 ]
+"112
+} 0
+"263
+[v _G_ClearGLCDCharBuffer_Mth G_ClearGLCDCharBuffer_Mth `(v  1 e 1 0 ]
+{
+"266
+[v G_ClearGLCDCharBuffer_Mth@L_DataRowCounter_Ui8 L_DataRowCounter_Ui8 `uc  1 a 1 2 ]
+"270
+} 0
+"114
+[v _G_CopyMsg_Mth G_CopyMsg_Mth `(uc  1 e 1 0 ]
+{
+[v G_CopyMsg_Mth@M_Msg_Ui8 M_Msg_Ui8 `uc  1 a 1 wreg ]
+"117
+[v G_CopyMsg_Mth@L_MsgCount_Ui8 L_MsgCount_Ui8 `uc  1 a 1 19 ]
+"116
+[v G_CopyMsg_Mth@L_MsgLen_Ui8 L_MsgLen_Ui8 `uc  1 a 1 18 ]
+"114
+[v G_CopyMsg_Mth@M_Msg_Ui8 M_Msg_Ui8 `uc  1 a 1 wreg ]
+"116
+[v G_CopyMsg_Mth@M_Msg_Ui8 M_Msg_Ui8 `uc  1 a 1 17 ]
+"122
+} 0
+"240
+[v _AppMessageLen AppMessageLen `(uc  1 e 1 0 ]
+{
+[v AppMessageLen@Message_Ui8 Message_Ui8 `uc  1 a 1 wreg ]
+"244
+[v AppMessageLen@colmn_Counter colmn_Counter `ui  1 a 2 6 ]
+"242
+[v AppMessageLen@MessageLen_Ui8 MessageLen_Ui8 `uc  1 a 1 8 ]
+"243
+[v AppMessageLen@RowCounte RowCounte `uc  1 a 1 5 ]
+"240
+[v AppMessageLen@Message_Ui8 Message_Ui8 `uc  1 a 1 wreg ]
+"242
+[v AppMessageLen@Message_Ui8 Message_Ui8 `uc  1 a 1 4 ]
+"250
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 2 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"150 D:\Mplabe\Glcd128x64\Glcd128x64.X\graphics.c
+[v _G_WriteBufferData_Mth G_WriteBufferData_Mth `(v  1 e 1 0 ]
+{
+"164
+[v G_WriteBufferData_Mth@L_DataCount_Ui8 L_DataCount_Ui8 `uc  1 a 1 3 ]
+"153
+[v G_WriteBufferData_Mth@ColCounter ColCounter `uc  1 a 1 4 ]
+"158
+[v G_WriteBufferData_Mth@L_DataRowCount_Ui8 L_DataRowCount_Ui8 `uc  1 a 1 2 ]
+"152
+[v G_WriteBufferData_Mth@L_GLCDData64_Ui8 L_GLCDData64_Ui8 `uc  1 a 1 1 ]
+"185
+} 0
+"187
+[v _G_SetRow_Mth G_SetRow_Mth `(v  1 e 1 0 ]
+{
+[v G_SetRow_Mth@L_Row_Ui8 L_Row_Ui8 `uc  1 a 1 wreg ]
+"189
+[v G_SetRow_Mth@L_Data_ui16 L_Data_ui16 `uc  1 a 1 7 ]
+"187
+[v G_SetRow_Mth@L_Row_Ui8 L_Row_Ui8 `uc  1 a 1 wreg ]
+"189
+[v G_SetRow_Mth@L_Row_Ui8 L_Row_Ui8 `uc  1 a 1 6 ]
+"191
+} 0
+"193
+[v _G_SetColumn_Mth G_SetColumn_Mth `(v  1 e 1 0 ]
+{
+[v G_SetColumn_Mth@L_Column_Ui8 L_Column_Ui8 `uc  1 a 1 wreg ]
+"195
+[v G_SetColumn_Mth@L_Data_ui8 L_Data_ui8 `uc  1 a 1 6 ]
+"193
+[v G_SetColumn_Mth@L_Column_Ui8 L_Column_Ui8 `uc  1 a 1 wreg ]
+[v G_SetColumn_Mth@L_Column_Ui8 L_Column_Ui8 `uc  1 a 1 7 ]
+"212
+} 0
+"214
+[v _G_GLCDClearDisplay_Mth G_GLCDClearDisplay_Mth `(v  1 e 1 0 ]
+{
+"216
+[v G_GLCDClearDisplay_Mth@X_Addrs X_Addrs `uc  1 a 1 8 ]
+[v G_GLCDClearDisplay_Mth@j_Addrs j_Addrs `uc  1 a 1 7 ]
+"217
+[v G_GLCDClearDisplay_Mth@L_Data_ui16 L_Data_ui16 `uc  1 a 1 6 ]
+"238
+} 0
+"75
+[v _G_GlcdWrite_Mth G_GlcdWrite_Mth `(v  1 e 1 0 ]
+{
+[v G_GlcdWrite_Mth@Rs_Status Rs_Status `uc  1 a 1 wreg ]
+[v G_GlcdWrite_Mth@Rs_Status Rs_Status `uc  1 a 1 wreg ]
+[v G_GlcdWrite_Mth@L_Data_Uch L_Data_Uch `uc  1 p 1 0 ]
+"77
+[v G_GlcdWrite_Mth@Rs_Status Rs_Status `uc  1 a 1 5 ]
+"89
+} 0
+"272
+[v _SetDelayUs_Mth SetDelayUs_Mth `(v  1 e 1 0 ]
+{
+[v SetDelayUs_Mth@CountVal CountVal `uc  1 a 1 wreg ]
+"275
+[v SetDelayUs_Mth@L_DelayCounter L_DelayCounter `uc  1 a 1 4 ]
+"274
+[v SetDelayUs_Mth@L_DelayCount L_DelayCount `uc  1 a 1 3 ]
+"272
+[v SetDelayUs_Mth@CountVal CountVal `uc  1 a 1 wreg ]
+"274
+[v SetDelayUs_Mth@CountVal CountVal `uc  1 a 1 2 ]
+"280
+} 0
+"252
+[v _G_ClearGLCEDataBuffer_Mth G_ClearGLCEDataBuffer_Mth `(v  1 e 1 0 ]
+{
+"256
+[v G_ClearGLCEDataBuffer_Mth@L_DataCounter_Ui8 L_DataCounter_Ui8 `uc  1 a 1 5 ]
+"254
+[v G_ClearGLCEDataBuffer_Mth@L_DataRowCounter_Ui8 L_DataRowCounter_Ui8 `uc  1 a 1 4 ]
+"261
+} 0
+"8 D:\Mplabe\Glcd128x64\Glcd128x64.X\system_flow.c
+[v _G_initgraphicsVriables_Mth G_initgraphicsVriables_Mth `(v  1 e 1 0 ]
+{
+"20
+} 0
+"2 D:\Mplabe\Glcd128x64\Glcd128x64.X\system.c
+[v _G_PowrOn_Mth G_PowrOn_Mth `(v  1 e 1 0 ]
+{
+"7
+} 0
+"20
+[v _TmrConfig_Mth TmrConfig_Mth `(v  1 e 1 0 ]
+{
+"24
+} 0
+"8
+[v _PortConfig_Mth PortConfig_Mth `(v  1 e 1 0 ]
+{
+"19
+} 0
+"25
+[v _IntrptConfig_Mth IntrptConfig_Mth `(v  1 e 1 0 ]
+{
+"29
+} 0
+"3 D:\Mplabe\Glcd128x64\Glcd128x64.X\ISR.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"24
+} 0

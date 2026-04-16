@@ -1,0 +1,315 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"29 D:\Mplabe\Oled\Oled.X\main.c
+[e E1478 . `uc
+DataSclt 0
+CmdSclt 1
+]
+"36
+[e E1487 . `uc
+false 0
+true 1
+]
+"18 D:\Mplabe\Oled\Oled.X\ISR.c
+[e E1487 . `uc
+false 0
+true 1
+]
+"28
+[e E1473 . `uc
+Prsvr 0
+WrtSclt 1
+RdSclt 2
+StpRdWrt 3
+]
+"34 D:\Mplabe\Oled\Oled.X\Oled.c
+[e E1481 . `uc
+CntsBytSclt 0
+SnglBytSclt 1
+]
+"35
+[e E1478 . `uc
+DataSclt 0
+CmdSclt 1
+]
+"40
+[e E1487 . `uc
+false 0
+true 1
+]
+"87
+[e E1473 . `uc
+Prsvr 0
+WrtSclt 1
+RdSclt 2
+StpRdWrt 3
+]
+"10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"3 D:\Mplabe\Oled\Oled.X\ISR.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"11 D:\Mplabe\Oled\Oled.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"4 D:\Mplabe\Oled\Oled.X\Oled.c
+[v _G_OledInitCmd_Mth G_OledInitCmd_Mth `(v  1 e 1 0 ]
+"58
+[v _G_ClrDsply_Mth G_ClrDsply_Mth `(v  1 e 1 0 ]
+"101
+[v _G_WrtMssg_Mth G_WrtMssg_Mth `(v  1 e 1 0 ]
+"168
+[v _L_I2c_Mstr_Wrt L_I2c_Mstr_Wrt `(v  1 e 1 0 ]
+"222
+[v _L_GetMssgLn_Fun L_GetMssgLn_Fun `(uc  1 e 1 0 ]
+"234
+[v _L_ClrBuffr_Mth L_ClrBuffr_Mth `(v  1 e 1 0 ]
+"4 D:\Mplabe\Oled\Oled.X\System.c
+[v _G_PowerOn_Mth G_PowerOn_Mth `(v  1 e 1 0 ]
+"12
+[v _L_I2cConfig_Mth L_I2cConfig_Mth `(v  1 e 1 0 ]
+"22
+[v _L_PortConfig_Mth L_PortConfig_Mth `(v  1 e 1 0 ]
+"30
+[v _L_TmrConfig_Mth L_TmrConfig_Mth `(v  1 e 1 0 ]
+"36
+[v _L_IntrrptCnf L_IntrrptCnf `(v  1 e 1 0 ]
+"11 D:\Mplabe\Oled\Oled.X/Fonts.h
+[v _CalibriFontSize CalibriFontSize `DC[96]uc  1 e 96 0 ]
+"111
+[v _Font7x10 Font7x10 `DC[96][19]uc  1 e 1824 0 ]
+"210
+[v _AnonymousImg AnonymousImg `DC[1025]uc  1 e 1025 0 ]
+"11 D:\Mplabe\Oled\Oled.X/Message.h
+[v _AppMessages AppMessages `[2][10]uc  1 e 20 0 ]
+"73 D:\Mplabe\Oled\Oled.X/SystemStruck.h
+[v _L_PtrDataBuffr_Ui8 L_PtrDataBuffr_Ui8 `*.26DCuc  1 e 2 0 ]
+[s S22 __I2cVars 58 `VEus 1 G_TotalBytsToWrt_Ui16 2 0 `VEus 1 G_TotalBytsToRd_Ui16 2 2 `VEus 1 G_DataCntr_Ui16 2 4 `[50]uc 1 G_I2cBuffr_Ui8 50 6 `VEuc 1 G_I2cEvnt_Ui8 1 56 `VEuc 1 L_I2cBuffrCntr_Ui8 1 57 ]
+"75
+[s S29 __I2cFlags 2 `uc 1 G_I2cBusy_F 1 0 :1:0 
+`uc 1 G_StrtCmplt_F 1 0 :1:1 
+`uc 1 G_StpCmplt_F 1 0 :1:2 
+`uc 1 G_TrsnmsonSclt_F 1 0 :1:3 
+`uc 1 G_ReptCmplt_F 1 0 :1:4 
+`uc 1 G_WrtCmplt_F 1 0 :1:5 
+`uc 1 G_RdCmplt_F 1 0 :1:6 
+`uc 1 G_RedWrtSclt_F 1 1 :2:0 
+`uc 1 G_ScltDataOrCmd_F 1 1 :2:2 
+]
+[s S39 __I2cStrct 60 `VES22 1 I2cVars 58 0 `S29 1 I2cFlags 2 58 ]
+[v _I2cStrct I2cStrct `VES39  1 e 60 0 ]
+[s S42 __OledVar 15 `VEuc 1 G_WrtMssgEv_Ui8 1 0 `VEuc 1 G_MssgLenght_Ui8 1 1 `VEuc 1 G_MssgOffst_Ui8 1 2 `VEuc 1 G_WrdCntr_Ui8 1 3 `VEuc 1 G_OledEvnt_Ui8 1 4 `VEus 1 G_BytsWrtCntr_Ui8 2 5 `VEus 1 G_DataOffset_Ui8 2 7 `VEus 1 G_NBytsToWrt_Ui16 2 9 `VEus 1 G_DlyCntr_Ui16 2 11 `VEus 1 G_DlyCnt_Ui16 2 13 ]
+"76
+[s S53 __OledFlags 1 `uc 1 G_OledInit_F 1 0 :1:0 
+`uc 1 G_DlyStrt_F 1 0 :1:1 
+`uc 1 G_DlyTimOut_F 1 0 :1:2 
+`uc 1 G_DsplyBusy_F 1 0 :1:3 
+]
+[s S58 __OledStrct 16 `VES42 1 OledVars 15 0 `S53 1 OledFlags 1 15 ]
+[v _OledStrct OledStrct `VES58  1 e 16 0 ]
+"59 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"459
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S234 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S243 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S248 . 1 `S234 1 . 1 0 `S243 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES248  1 e 1 @11 ]
+[s S289 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S297 . 1 `S289 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES297  1 e 1 @12 ]
+"843
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"850
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"1346
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1702
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+[s S270 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S278 . 1 `S270 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES278  1 e 1 @140 ]
+"1979
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"2048
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"2177
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"11 D:\Mplabe\Oled\Oled.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"75
+} 0
+"101 D:\Mplabe\Oled\Oled.X\Oled.c
+[v _G_WrtMssg_Mth G_WrtMssg_Mth `(v  1 e 1 0 ]
+{
+[v G_WrtMssg_Mth@L_MssgNum_Ui8 L_MssgNum_Ui8 `uc  1 p 1 wreg ]
+"107
+[v G_WrtMssg_Mth@L_I2cBffrCntr L_I2cBffrCntr `uc  1 a 1 19 ]
+"106
+[v G_WrtMssg_Mth@L_ClmCntr_Ui8 L_ClmCntr_Ui8 `uc  1 a 1 18 ]
+"104
+[v G_WrtMssg_Mth@L_FontIndex_Ui8 L_FontIndex_Ui8 `uc  1 a 1 17 ]
+"108
+[v G_WrtMssg_Mth@L_FontData_Ui8 L_FontData_Ui8 `uc  1 a 1 15 ]
+"105
+[v G_WrtMssg_Mth@L_FontSize_Ui8 L_FontSize_Ui8 `uc  1 a 1 14 ]
+"103
+[v G_WrtMssg_Mth@TmpData TmpData `uc  1 a 1 13 ]
+"101
+[v G_WrtMssg_Mth@L_MssgNum_Ui8 L_MssgNum_Ui8 `uc  1 p 1 wreg ]
+[v G_WrtMssg_Mth@L_XPostn_Ui8 L_XPostn_Ui8 `uc  1 p 1 4 ]
+"104
+[v G_WrtMssg_Mth@L_MssgNum_Ui8 L_MssgNum_Ui8 `uc  1 p 1 16 ]
+"165
+} 0
+"15 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 0 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 4 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 6 ]
+"53
+} 0
+"222 D:\Mplabe\Oled\Oled.X\Oled.c
+[v _L_GetMssgLn_Fun L_GetMssgLn_Fun `(uc  1 e 1 0 ]
+{
+[v L_GetMssgLn_Fun@L_MssgNum_Ui8 L_MssgNum_Ui8 `uc  1 p 1 wreg ]
+"225
+[v L_GetMssgLn_Fun@L_ClmnCntr L_ClmnCntr `uc  1 a 1 3 ]
+"224
+[v L_GetMssgLn_Fun@L_DataCntr L_DataCntr `uc  1 a 1 2 ]
+"226
+[v L_GetMssgLn_Fun@L_RwCntr L_RwCntr `uc  1 a 1 1 ]
+"222
+[v L_GetMssgLn_Fun@L_MssgNum_Ui8 L_MssgNum_Ui8 `uc  1 p 1 wreg ]
+"224
+[v L_GetMssgLn_Fun@L_MssgNum_Ui8 L_MssgNum_Ui8 `uc  1 p 1 0 ]
+"232
+} 0
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 p 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 5 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 p 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 4 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 p 1 6 ]
+"51
+} 0
+"234 D:\Mplabe\Oled\Oled.X\Oled.c
+[v _L_ClrBuffr_Mth L_ClrBuffr_Mth `(v  1 e 1 0 ]
+{
+"236
+[v L_ClrBuffr_Mth@L_Cntr_Ui8 L_Cntr_Ui8 `uc  1 a 1 6 ]
+"241
+} 0
+"4 D:\Mplabe\Oled\Oled.X\System.c
+[v _G_PowerOn_Mth G_PowerOn_Mth `(v  1 e 1 0 ]
+{
+"10
+} 0
+"30
+[v _L_TmrConfig_Mth L_TmrConfig_Mth `(v  1 e 1 0 ]
+{
+"34
+} 0
+"22
+[v _L_PortConfig_Mth L_PortConfig_Mth `(v  1 e 1 0 ]
+{
+"28
+} 0
+"36
+[v _L_IntrrptCnf L_IntrrptCnf `(v  1 e 1 0 ]
+{
+"42
+} 0
+"12
+[v _L_I2cConfig_Mth L_I2cConfig_Mth `(v  1 e 1 0 ]
+{
+"20
+} 0
+"4 D:\Mplabe\Oled\Oled.X\Oled.c
+[v _G_OledInitCmd_Mth G_OledInitCmd_Mth `(v  1 e 1 0 ]
+{
+"44
+} 0
+"168
+[v _L_I2c_Mstr_Wrt L_I2c_Mstr_Wrt `(v  1 e 1 0 ]
+{
+[v L_I2c_Mstr_Wrt@L_DevAddress_Ui8 L_DevAddress_Ui8 `uc  1 p 1 wreg ]
+[v L_I2c_Mstr_Wrt@L_DevAddress_Ui8 L_DevAddress_Ui8 `uc  1 p 1 wreg ]
+[v L_I2c_Mstr_Wrt@L_TempPtr_Ui8 L_TempPtr_Ui8 `*.26DCuc  1 p 2 4 ]
+[v L_I2c_Mstr_Wrt@L_Size_Ui8 L_Size_Ui8 `us  1 p 2 6 ]
+"170
+[v L_I2c_Mstr_Wrt@L_DevAddress_Ui8 L_DevAddress_Ui8 `uc  1 p 1 1 ]
+"220
+} 0
+"58
+[v _G_ClrDsply_Mth G_ClrDsply_Mth `(v  1 e 1 0 ]
+{
+[v G_ClrDsply_Mth@L_DevAddress_Ui8 L_DevAddress_Ui8 `uc  1 p 1 wreg ]
+[v G_ClrDsply_Mth@L_DevAddress_Ui8 L_DevAddress_Ui8 `uc  1 p 1 wreg ]
+[v G_ClrDsply_Mth@L_Size_Ui8 L_Size_Ui8 `us  1 p 2 4 ]
+"60
+[v G_ClrDsply_Mth@L_DevAddress_Ui8 L_DevAddress_Ui8 `uc  1 p 1 6 ]
+"100
+} 0
+"3 D:\Mplabe\Oled\Oled.X\ISR.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"34
+} 0

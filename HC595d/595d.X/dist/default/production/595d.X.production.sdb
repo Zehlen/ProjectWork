@@ -1,0 +1,224 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"19 D:\Xide\HC595d\595d.X\ISR.c
+[e E1334 . `uc
+false 0
+true 1
+]
+"20 D:\Xide\HC595d\595d.X\Display.c
+[e E1334 . `uc
+false 0
+true 1
+]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"3 D:\Xide\HC595d\595d.X\Display.c
+[v _G_SwtchDsply G_SwtchDsply `(v  1 e 1 0 ]
+"85
+[v _L_SwtchDsply L_SwtchDsply `(v  1 e 1 0 ]
+"127
+[v _G_SetData_Mth G_SetData_Mth `(v  1 e 1 0 ]
+"3 D:\Xide\HC595d\595d.X\ISR.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"11 D:\Xide\HC595d\595d.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"3 D:\Xide\HC595d\595d.X\system.c
+[v _G_PowerOn_Mth G_PowerOn_Mth `(v  1 e 1 0 ]
+"10
+[v _L_PortCnfg_Mth L_PortCnfg_Mth `(v  1 e 1 0 ]
+"23
+[v _L_TmrCnfg L_TmrCnfg `(v  1 e 1 0 ]
+"30
+[v _L_IntrrptCnf L_IntrrptCnf `(v  1 e 1 0 ]
+"31 D:\Xide\HC595d\595d.X/Display.h
+[v _DsplyVal_ArrUi8 DsplyVal_ArrUi8 `[10]uc  1 e 10 0 ]
+[s S22 __DsplyVar 10 `VEuc 1 G_ScltDigit_Ui8 1 0 `VEuc 1 G_DsplyEvnt_Ui8 1 1 `VEuc 1 G_DsplyData_Ui8 1 2 `VEuc 1 G_UintCntr_Ui8 1 3 `VEuc 1 G_TenCntr_Ui8 1 4 `VEuc 1 G_HndrdCntr_Ui8 1 5 `VEui 1 G_DelyaCnt_Ui16 2 6 `VEui 1 G_DelayCntr_Ui16 2 8 ]
+"16 D:\Xide\HC595d\595d.X/system.h
+[s S31 __DsplyFlag 1 `uc 1 TimOutF 1 0 :1:0 
+`uc 1 StrtDsplyDlyF 1 0 :1:1 
+]
+[s S34 __DsplySettng 11 `VES22 1 DsplyVar 10 0 `S31 1 DsplyFlag 1 10 ]
+[v _DsplySttng DsplySttng `VES34  1 e 11 0 ]
+[s S37 __KeyPadFlags 1 `uc 1 IncKeyF 1 0 :1:0 
+`uc 1 DncKeyF 1 0 :1:1 
+`uc 1 RstKeyF 1 0 :1:2 
+`uc 1 KeyDtctedF 1 0 :1:3 
+`uc 1 KeyPrssF 1 0 :1:4 
+`uc 1 KeyRelsF 1 0 :1:5 
+]
+"17
+[u S44 __KeyPad_Un 1 `uc 1 Key_val 1 0 :3:0 
+`S37 1 KeyPadFalg 1 0 ]
+[v _KeyPad_Un KeyPad_Un `S44  1 e 1 0 ]
+[s S47 __KeyPadVars 7 `VEuc 1 RdPortVal_Ui8 1 0 `VEuc 1 KeyCntr_Ui8 1 1 `VEuc 1 DbnceCntr_Ui8 1 2 `VEuc 1 DbnceCnt_Ui8 1 3 `VEuc 1 G_CnfrmkeyVal_Ui8 1 4 `VEui 1 KeyValCntr_ui16 2 5 ]
+"18
+[s S54 __KeyPad 8 `VES47 1 KeyPadVars 7 0 `S37 1 KeyPadFlag 1 7 ]
+[v _KeyPadVars KeyPadVars `VES54  1 e 8 0 ]
+"59 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S61 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"307
+[u S70 . 1 `S61 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES70  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S350 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"369
+[u S359 . 1 `S350 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES359  1 e 1 @8 ]
+"459
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S237 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S246 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S251 . 1 `S237 1 . 1 0 `S246 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES251  1 e 1 @11 ]
+"1346
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"2346
+[v _WPUB WPUB `VEuc  1 e 1 @149 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"11 D:\Xide\HC595d\595d.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"30
+} 0
+"3 D:\Xide\HC595d\595d.X\Display.c
+[v _G_SwtchDsply G_SwtchDsply `(v  1 e 1 0 ]
+{
+"83
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 8 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 4 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 6 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 4 ]
+[v ___awdiv@dividend dividend `i  1 p 2 6 ]
+"41
+} 0
+"85 D:\Xide\HC595d\595d.X\Display.c
+[v _L_SwtchDsply L_SwtchDsply `(v  1 e 1 0 ]
+{
+"124
+} 0
+"127
+[v _G_SetData_Mth G_SetData_Mth `(v  1 e 1 0 ]
+{
+[v G_SetData_Mth@L_Data_Ui8 L_Data_Ui8 `uc  1 a 1 wreg ]
+"132
+[v G_SetData_Mth@L_BitCntr L_BitCntr `uc  1 a 1 10 ]
+"130
+[v G_SetData_Mth@L_BytCntr L_BytCntr `uc  1 a 1 9 ]
+"129
+[v G_SetData_Mth@L_BitPstn L_BitPstn `[8]uc  1 a 8 0 ]
+"127
+[v G_SetData_Mth@L_Data_Ui8 L_Data_Ui8 `uc  1 a 1 wreg ]
+"128
+[v G_SetData_Mth@F1357 F1357 `[8]uc  1 s 8 F1357 ]
+[v G_SetData_Mth@L_Data_Ui8 L_Data_Ui8 `uc  1 a 1 8 ]
+"154
+} 0
+"3 D:\Xide\HC595d\595d.X\system.c
+[v _G_PowerOn_Mth G_PowerOn_Mth `(v  1 e 1 0 ]
+{
+"8
+} 0
+"23
+[v _L_TmrCnfg L_TmrCnfg `(v  1 e 1 0 ]
+{
+"28
+} 0
+"10
+[v _L_PortCnfg_Mth L_PortCnfg_Mth `(v  1 e 1 0 ]
+{
+"21
+} 0
+"30
+[v _L_IntrrptCnf L_IntrrptCnf `(v  1 e 1 0 ]
+{
+"36
+} 0
+"3 D:\Xide\HC595d\595d.X\ISR.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"63
+} 0

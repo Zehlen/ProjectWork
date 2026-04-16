@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/system.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/main.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/ISR.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/main.c</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/system.c</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/ISR.c</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/define.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/app_msg.c</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/app_msg.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/extern_graphics.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/extern_gui.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/extern_MtrSetting.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/font_calibri.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/graphics.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/gui.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/MtrSetting.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/struck_system.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/gui.c</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/graphics.c</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/system_flow.c</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/system_flow.h</file>
+            <file>file:/D:/Mplabe/Glcd128x64/Glcd128x64.X/config.h</file>
+        </group>
+    </open-files>
+</project-private>
