@@ -1,0 +1,202 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"6 D:\Mplabe\rs845\Transmitter\Transmitter.X\main.c
+[e E1443 . `uc
+False 0
+True 1
+]
+"14 D:\Mplabe\rs845\Transmitter\Transmitter.X\ISR.c
+[e E1443 . `uc
+False 0
+True 1
+]
+"10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"3 D:\Mplabe\rs845\Transmitter\Transmitter.X\ISR.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"3 D:\Mplabe\rs845\Transmitter\Transmitter.X\main.c
+[v _main main `(i  1 e 2 0 ]
+"30
+[v _G_ClrBuffr_Mth G_ClrBuffr_Mth `(v  1 e 1 0 ]
+"3 D:\Mplabe\rs845\Transmitter\Transmitter.X\system.c
+[v _G_PwrOn_Mth G_PwrOn_Mth `(v  1 e 1 0 ]
+"11
+[v _G_PrtCnfg_Mth G_PrtCnfg_Mth `(v  1 e 1 0 ]
+"18
+[v _G_UartCnfg_Mth G_UartCnfg_Mth `(v  1 e 1 0 ]
+"27
+[v _L_TmrCnfig_Mth L_TmrCnfig_Mth `(v  1 e 1 0 ]
+"33
+[v _G_IntrCnfg_Mth G_IntrCnfg_Mth `(v  1 e 1 0 ]
+[s S53 __UartVars 54 `VEuc 1 G_TxBytCntr_Ui8 1 0 `VEuc 1 G_TxBytCnt_Ui8 1 1 `VEuc 1 G_RxBytCntr_Ui8 1 2 `VEuc 1 G_DlayCntr_Ui8 1 3 `VE[50]uc 1 G_Buffr_Ui8 50 4 ]
+"34 D:\Mplabe\rs845\Transmitter\Transmitter.X/systmstrk.h
+[s S59 __UartFlags 1 `uc 1 G_TxCmplt_F 1 0 :1:0 
+`uc 1 G_RxCmplt_F 1 0 :1:1 
+`uc 1 G_DlyStrt_F 1 0 :1:2 
+`uc 1 G_DlyTimOut_F 1 0 :1:3 
+]
+[s S64 __UartStrk 55 `VES53 1 UartVars 54 0 `S59 1 UartFlags 1 54 ]
+[v _UartStrk UartStrk `VES64  1 e 55 0 ]
+"59 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"414
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S71 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S76 . 1 `S71 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES76  1 e 1 @9 ]
+"459
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S232 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S241 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S246 . 1 `S232 1 . 1 0 `S241 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES246  1 e 1 @11 ]
+[s S287 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S295 . 1 `S287 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES295  1 e 1 @12 ]
+"1038
+[v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+[s S125 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1068
+[s S134 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S138 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S141 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S144 . 1 `S125 1 . 1 0 `S134 1 . 1 0 `S138 1 . 1 0 `S141 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES144  1 e 1 @24 ]
+"1133
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1346
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1664
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1702
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+[s S268 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S276 . 1 `S268 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES276  1 e 1 @140 ]
+"2556
+[v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
+[s S84 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2582
+[s S93 . 1 `uc 1 TXD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 nTX8 1 0 :1:6 
+]
+[s S97 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[u S100 . 1 `S84 1 . 1 0 `S93 1 . 1 0 `S97 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES100  1 e 1 @152 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3 D:\Mplabe\rs845\Transmitter\Transmitter.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"28
+} 0
+"3 D:\Mplabe\rs845\Transmitter\Transmitter.X\system.c
+[v _G_PwrOn_Mth G_PwrOn_Mth `(v  1 e 1 0 ]
+{
+"9
+} 0
+"27
+[v _L_TmrCnfig_Mth L_TmrCnfig_Mth `(v  1 e 1 0 ]
+{
+"31
+} 0
+"18
+[v _G_UartCnfg_Mth G_UartCnfg_Mth `(v  1 e 1 0 ]
+{
+"25
+} 0
+"11
+[v _G_PrtCnfg_Mth G_PrtCnfg_Mth `(v  1 e 1 0 ]
+{
+"16
+} 0
+"33
+[v _G_IntrCnfg_Mth G_IntrCnfg_Mth `(v  1 e 1 0 ]
+{
+"39
+} 0
+"30 D:\Mplabe\rs845\Transmitter\Transmitter.X\main.c
+[v _G_ClrBuffr_Mth G_ClrBuffr_Mth `(v  1 e 1 0 ]
+{
+"33
+[v G_ClrBuffr_Mth@L_BytCntr_Ui8 L_BytCntr_Ui8 `uc  1 a 1 7 ]
+"39
+} 0
+"3 D:\Mplabe\rs845\Transmitter\Transmitter.X\ISR.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"52
+} 0

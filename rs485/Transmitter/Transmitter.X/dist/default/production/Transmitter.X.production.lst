@@ -1,0 +1,1580 @@
+
+
+Microchip MPLAB XC8 Assembler V3.00 build 20241204225717 
+                                                                                               Tue May 05 19:56:04 2026
+
+Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,space=0,merge=1,delta=2
+     5                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	clrtext,global,class=CODE,space=0,delta=2
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     8                           	psect	maintext,global,class=CODE,space=0,split=1,delta=2
+     9                           	psect	text1,local,class=CODE,space=0,merge=1,delta=2
+    10                           	psect	text2,local,class=CODE,space=0,merge=1,delta=2
+    11                           	psect	text3,local,class=CODE,space=0,merge=1,delta=2
+    12                           	psect	text4,local,class=CODE,space=0,merge=1,delta=2
+    13                           	psect	text5,local,class=CODE,space=0,merge=1,delta=2
+    14                           	psect	text6,local,class=CODE,space=0,merge=1,delta=2
+    15                           	psect	text7,local,class=CODE,space=0,merge=1,delta=2
+    16                           	psect	intentry,global,class=CODE,space=0,delta=2
+    17                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    18                           	dabs	1,0x7E,2
+    19     0000                     
+    20                           ; Generated 12/10/2023 GMT
+    21                           ; 
+    22                           ; Copyright © 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    23                           ; All rights reserved.
+    24                           ; 
+    25                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    26                           ; 
+    27                           ; Redistribution and use in source and binary forms, with or without modification, are
+    28                           ; permitted provided that the following conditions are met:
+    29                           ; 
+    30                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    31                           ;        conditions and the following disclaimer.
+    32                           ; 
+    33                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    34                           ;        of conditions and the following disclaimer in the documentation and/or other
+    35                           ;        materials provided with the distribution. Publication is not required when
+    36                           ;        this file is used in an embedded application.
+    37                           ; 
+    38                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    39                           ;        software without specific prior written permission.
+    40                           ; 
+    41                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    42                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    43                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    44                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    45                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    46                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    47                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    48                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    49                           ; 
+    50                           ; 
+    51                           ; Code-generator required, PIC16F887 Definitions
+    52                           ; 
+    53                           ; SFR Addresses
+    54     0004                     fsr             equ	4
+    55     0004                     fsr0            equ	4
+    56     0000                     indf            equ	0
+    57     0000                     indf0           equ	0
+    58     0002                     pc              equ	2
+    59     0002                     pcl             equ	2
+    60     000A                     pclath          equ	10
+    61     0003                     status          equ	3
+    62     0000                     INDF            equ	0	;# 
+    63     0001                     TMR0            equ	1	;# 
+    64     0002                     PCL             equ	2	;# 
+    65     0003                     STATUS          equ	3	;# 
+    66     0004                     FSR             equ	4	;# 
+    67     0005                     PORTA           equ	5	;# 
+    68     0006                     PORTB           equ	6	;# 
+    69     0007                     PORTC           equ	7	;# 
+    70     0008                     PORTD           equ	8	;# 
+    71     0009                     PORTE           equ	9	;# 
+    72     000A                     PCLATH          equ	10	;# 
+    73     000B                     INTCON          equ	11	;# 
+    74     000C                     PIR1            equ	12	;# 
+    75     000D                     PIR2            equ	13	;# 
+    76     000E                     TMR1            equ	14	;# 
+    77     000E                     TMR1L           equ	14	;# 
+    78     000F                     TMR1H           equ	15	;# 
+    79     0010                     T1CON           equ	16	;# 
+    80     0011                     TMR2            equ	17	;# 
+    81     0012                     T2CON           equ	18	;# 
+    82     0013                     SSPBUF          equ	19	;# 
+    83     0014                     SSPCON          equ	20	;# 
+    84     0015                     CCPR1           equ	21	;# 
+    85     0015                     CCPR1L          equ	21	;# 
+    86     0016                     CCPR1H          equ	22	;# 
+    87     0017                     CCP1CON         equ	23	;# 
+    88     0018                     RCSTA           equ	24	;# 
+    89     0019                     TXREG           equ	25	;# 
+    90     001A                     RCREG           equ	26	;# 
+    91     001B                     CCPR2           equ	27	;# 
+    92     001B                     CCPR2L          equ	27	;# 
+    93     001C                     CCPR2H          equ	28	;# 
+    94     001D                     CCP2CON         equ	29	;# 
+    95     001E                     ADRESH          equ	30	;# 
+    96     001F                     ADCON0          equ	31	;# 
+    97     0081                     OPTION_REG      equ	129	;# 
+    98     0085                     TRISA           equ	133	;# 
+    99     0086                     TRISB           equ	134	;# 
+   100     0087                     TRISC           equ	135	;# 
+   101     0088                     TRISD           equ	136	;# 
+   102     0089                     TRISE           equ	137	;# 
+   103     008C                     PIE1            equ	140	;# 
+   104     008D                     PIE2            equ	141	;# 
+   105     008E                     PCON            equ	142	;# 
+   106     008F                     OSCCON          equ	143	;# 
+   107     0090                     OSCTUNE         equ	144	;# 
+   108     0091                     SSPCON2         equ	145	;# 
+   109     0092                     PR2             equ	146	;# 
+   110     0093                     SSPADD          equ	147	;# 
+   111     0093                     SSPMSK          equ	147	;# 
+   112     0093                     MSK             equ	147	;# 
+   113     0094                     SSPSTAT         equ	148	;# 
+   114     0095                     WPUB            equ	149	;# 
+   115     0096                     IOCB            equ	150	;# 
+   116     0097                     VRCON           equ	151	;# 
+   117     0098                     TXSTA           equ	152	;# 
+   118     0099                     SPBRG           equ	153	;# 
+   119     009A                     SPBRGH          equ	154	;# 
+   120     009B                     PWM1CON         equ	155	;# 
+   121     009C                     ECCPAS          equ	156	;# 
+   122     009D                     PSTRCON         equ	157	;# 
+   123     009E                     ADRESL          equ	158	;# 
+   124     009F                     ADCON1          equ	159	;# 
+   125     0105                     WDTCON          equ	261	;# 
+   126     0107                     CM1CON0         equ	263	;# 
+   127     0108                     CM2CON0         equ	264	;# 
+   128     0109                     CM2CON1         equ	265	;# 
+   129     010C                     EEDATA          equ	268	;# 
+   130     010C                     EEDAT           equ	268	;# 
+   131     010D                     EEADR           equ	269	;# 
+   132     010E                     EEDATH          equ	270	;# 
+   133     010F                     EEADRH          equ	271	;# 
+   134     0185                     SRCON           equ	389	;# 
+   135     0187                     BAUDCTL         equ	391	;# 
+   136     0188                     ANSEL           equ	392	;# 
+   137     0189                     ANSELH          equ	393	;# 
+   138     018C                     EECON1          equ	396	;# 
+   139     018D                     EECON2          equ	397	;# 
+   140     0000                     INDF            equ	0	;# 
+   141     0001                     TMR0            equ	1	;# 
+   142     0002                     PCL             equ	2	;# 
+   143     0003                     STATUS          equ	3	;# 
+   144     0004                     FSR             equ	4	;# 
+   145     0005                     PORTA           equ	5	;# 
+   146     0006                     PORTB           equ	6	;# 
+   147     0007                     PORTC           equ	7	;# 
+   148     0008                     PORTD           equ	8	;# 
+   149     0009                     PORTE           equ	9	;# 
+   150     000A                     PCLATH          equ	10	;# 
+   151     000B                     INTCON          equ	11	;# 
+   152     000C                     PIR1            equ	12	;# 
+   153     000D                     PIR2            equ	13	;# 
+   154     000E                     TMR1            equ	14	;# 
+   155     000E                     TMR1L           equ	14	;# 
+   156     000F                     TMR1H           equ	15	;# 
+   157     0010                     T1CON           equ	16	;# 
+   158     0011                     TMR2            equ	17	;# 
+   159     0012                     T2CON           equ	18	;# 
+   160     0013                     SSPBUF          equ	19	;# 
+   161     0014                     SSPCON          equ	20	;# 
+   162     0015                     CCPR1           equ	21	;# 
+   163     0015                     CCPR1L          equ	21	;# 
+   164     0016                     CCPR1H          equ	22	;# 
+   165     0017                     CCP1CON         equ	23	;# 
+   166     0018                     RCSTA           equ	24	;# 
+   167     0019                     TXREG           equ	25	;# 
+   168     001A                     RCREG           equ	26	;# 
+   169     001B                     CCPR2           equ	27	;# 
+   170     001B                     CCPR2L          equ	27	;# 
+   171     001C                     CCPR2H          equ	28	;# 
+   172     001D                     CCP2CON         equ	29	;# 
+   173     001E                     ADRESH          equ	30	;# 
+   174     001F                     ADCON0          equ	31	;# 
+   175     0081                     OPTION_REG      equ	129	;# 
+   176     0085                     TRISA           equ	133	;# 
+   177     0086                     TRISB           equ	134	;# 
+   178     0087                     TRISC           equ	135	;# 
+   179     0088                     TRISD           equ	136	;# 
+   180     0089                     TRISE           equ	137	;# 
+   181     008C                     PIE1            equ	140	;# 
+   182     008D                     PIE2            equ	141	;# 
+   183     008E                     PCON            equ	142	;# 
+   184     008F                     OSCCON          equ	143	;# 
+   185     0090                     OSCTUNE         equ	144	;# 
+   186     0091                     SSPCON2         equ	145	;# 
+   187     0092                     PR2             equ	146	;# 
+   188     0093                     SSPADD          equ	147	;# 
+   189     0093                     SSPMSK          equ	147	;# 
+   190     0093                     MSK             equ	147	;# 
+   191     0094                     SSPSTAT         equ	148	;# 
+   192     0095                     WPUB            equ	149	;# 
+   193     0096                     IOCB            equ	150	;# 
+   194     0097                     VRCON           equ	151	;# 
+   195     0098                     TXSTA           equ	152	;# 
+   196     0099                     SPBRG           equ	153	;# 
+   197     009A                     SPBRGH          equ	154	;# 
+   198     009B                     PWM1CON         equ	155	;# 
+   199     009C                     ECCPAS          equ	156	;# 
+   200     009D                     PSTRCON         equ	157	;# 
+   201     009E                     ADRESL          equ	158	;# 
+   202     009F                     ADCON1          equ	159	;# 
+   203     0105                     WDTCON          equ	261	;# 
+   204     0107                     CM1CON0         equ	263	;# 
+   205     0108                     CM2CON0         equ	264	;# 
+   206     0109                     CM2CON1         equ	265	;# 
+   207     010C                     EEDATA          equ	268	;# 
+   208     010C                     EEDAT           equ	268	;# 
+   209     010D                     EEADR           equ	269	;# 
+   210     010E                     EEDATH          equ	270	;# 
+   211     010F                     EEADRH          equ	271	;# 
+   212     0185                     SRCON           equ	389	;# 
+   213     0187                     BAUDCTL         equ	391	;# 
+   214     0188                     ANSEL           equ	392	;# 
+   215     0189                     ANSELH          equ	393	;# 
+   216     018C                     EECON1          equ	396	;# 
+   217     018D                     EECON2          equ	397	;# 
+   218     0000                     INDF            equ	0	;# 
+   219     0001                     TMR0            equ	1	;# 
+   220     0002                     PCL             equ	2	;# 
+   221     0003                     STATUS          equ	3	;# 
+   222     0004                     FSR             equ	4	;# 
+   223     0005                     PORTA           equ	5	;# 
+   224     0006                     PORTB           equ	6	;# 
+   225     0007                     PORTC           equ	7	;# 
+   226     0008                     PORTD           equ	8	;# 
+   227     0009                     PORTE           equ	9	;# 
+   228     000A                     PCLATH          equ	10	;# 
+   229     000B                     INTCON          equ	11	;# 
+   230     000C                     PIR1            equ	12	;# 
+   231     000D                     PIR2            equ	13	;# 
+   232     000E                     TMR1            equ	14	;# 
+   233     000E                     TMR1L           equ	14	;# 
+   234     000F                     TMR1H           equ	15	;# 
+   235     0010                     T1CON           equ	16	;# 
+   236     0011                     TMR2            equ	17	;# 
+   237     0012                     T2CON           equ	18	;# 
+   238     0013                     SSPBUF          equ	19	;# 
+   239     0014                     SSPCON          equ	20	;# 
+   240     0015                     CCPR1           equ	21	;# 
+   241     0015                     CCPR1L          equ	21	;# 
+   242     0016                     CCPR1H          equ	22	;# 
+   243     0017                     CCP1CON         equ	23	;# 
+   244     0018                     RCSTA           equ	24	;# 
+   245     0019                     TXREG           equ	25	;# 
+   246     001A                     RCREG           equ	26	;# 
+   247     001B                     CCPR2           equ	27	;# 
+   248     001B                     CCPR2L          equ	27	;# 
+   249     001C                     CCPR2H          equ	28	;# 
+   250     001D                     CCP2CON         equ	29	;# 
+   251     001E                     ADRESH          equ	30	;# 
+   252     001F                     ADCON0          equ	31	;# 
+   253     0081                     OPTION_REG      equ	129	;# 
+   254     0085                     TRISA           equ	133	;# 
+   255     0086                     TRISB           equ	134	;# 
+   256     0087                     TRISC           equ	135	;# 
+   257     0088                     TRISD           equ	136	;# 
+   258     0089                     TRISE           equ	137	;# 
+   259     008C                     PIE1            equ	140	;# 
+   260     008D                     PIE2            equ	141	;# 
+   261     008E                     PCON            equ	142	;# 
+   262     008F                     OSCCON          equ	143	;# 
+   263     0090                     OSCTUNE         equ	144	;# 
+   264     0091                     SSPCON2         equ	145	;# 
+   265     0092                     PR2             equ	146	;# 
+   266     0093                     SSPADD          equ	147	;# 
+   267     0093                     SSPMSK          equ	147	;# 
+   268     0093                     MSK             equ	147	;# 
+   269     0094                     SSPSTAT         equ	148	;# 
+   270     0095                     WPUB            equ	149	;# 
+   271     0096                     IOCB            equ	150	;# 
+   272     0097                     VRCON           equ	151	;# 
+   273     0098                     TXSTA           equ	152	;# 
+   274     0099                     SPBRG           equ	153	;# 
+   275     009A                     SPBRGH          equ	154	;# 
+   276     009B                     PWM1CON         equ	155	;# 
+   277     009C                     ECCPAS          equ	156	;# 
+   278     009D                     PSTRCON         equ	157	;# 
+   279     009E                     ADRESL          equ	158	;# 
+   280     009F                     ADCON1          equ	159	;# 
+   281     0105                     WDTCON          equ	261	;# 
+   282     0107                     CM1CON0         equ	263	;# 
+   283     0108                     CM2CON0         equ	264	;# 
+   284     0109                     CM2CON1         equ	265	;# 
+   285     010C                     EEDATA          equ	268	;# 
+   286     010C                     EEDAT           equ	268	;# 
+   287     010D                     EEADR           equ	269	;# 
+   288     010E                     EEDATH          equ	270	;# 
+   289     010F                     EEADRH          equ	271	;# 
+   290     0185                     SRCON           equ	389	;# 
+   291     0187                     BAUDCTL         equ	391	;# 
+   292     0188                     ANSEL           equ	392	;# 
+   293     0189                     ANSELH          equ	393	;# 
+   294     018C                     EECON1          equ	396	;# 
+   295     018D                     EECON2          equ	397	;# 
+   296     0000                     INDF            equ	0	;# 
+   297     0001                     TMR0            equ	1	;# 
+   298     0002                     PCL             equ	2	;# 
+   299     0003                     STATUS          equ	3	;# 
+   300     0004                     FSR             equ	4	;# 
+   301     0005                     PORTA           equ	5	;# 
+   302     0006                     PORTB           equ	6	;# 
+   303     0007                     PORTC           equ	7	;# 
+   304     0008                     PORTD           equ	8	;# 
+   305     0009                     PORTE           equ	9	;# 
+   306     000A                     PCLATH          equ	10	;# 
+   307     000B                     INTCON          equ	11	;# 
+   308     000C                     PIR1            equ	12	;# 
+   309     000D                     PIR2            equ	13	;# 
+   310     000E                     TMR1            equ	14	;# 
+   311     000E                     TMR1L           equ	14	;# 
+   312     000F                     TMR1H           equ	15	;# 
+   313     0010                     T1CON           equ	16	;# 
+   314     0011                     TMR2            equ	17	;# 
+   315     0012                     T2CON           equ	18	;# 
+   316     0013                     SSPBUF          equ	19	;# 
+   317     0014                     SSPCON          equ	20	;# 
+   318     0015                     CCPR1           equ	21	;# 
+   319     0015                     CCPR1L          equ	21	;# 
+   320     0016                     CCPR1H          equ	22	;# 
+   321     0017                     CCP1CON         equ	23	;# 
+   322     0018                     RCSTA           equ	24	;# 
+   323     0019                     TXREG           equ	25	;# 
+   324     001A                     RCREG           equ	26	;# 
+   325     001B                     CCPR2           equ	27	;# 
+   326     001B                     CCPR2L          equ	27	;# 
+   327     001C                     CCPR2H          equ	28	;# 
+   328     001D                     CCP2CON         equ	29	;# 
+   329     001E                     ADRESH          equ	30	;# 
+   330     001F                     ADCON0          equ	31	;# 
+   331     0081                     OPTION_REG      equ	129	;# 
+   332     0085                     TRISA           equ	133	;# 
+   333     0086                     TRISB           equ	134	;# 
+   334     0087                     TRISC           equ	135	;# 
+   335     0088                     TRISD           equ	136	;# 
+   336     0089                     TRISE           equ	137	;# 
+   337     008C                     PIE1            equ	140	;# 
+   338     008D                     PIE2            equ	141	;# 
+   339     008E                     PCON            equ	142	;# 
+   340     008F                     OSCCON          equ	143	;# 
+   341     0090                     OSCTUNE         equ	144	;# 
+   342     0091                     SSPCON2         equ	145	;# 
+   343     0092                     PR2             equ	146	;# 
+   344     0093                     SSPADD          equ	147	;# 
+   345     0093                     SSPMSK          equ	147	;# 
+   346     0093                     MSK             equ	147	;# 
+   347     0094                     SSPSTAT         equ	148	;# 
+   348     0095                     WPUB            equ	149	;# 
+   349     0096                     IOCB            equ	150	;# 
+   350     0097                     VRCON           equ	151	;# 
+   351     0098                     TXSTA           equ	152	;# 
+   352     0099                     SPBRG           equ	153	;# 
+   353     009A                     SPBRGH          equ	154	;# 
+   354     009B                     PWM1CON         equ	155	;# 
+   355     009C                     ECCPAS          equ	156	;# 
+   356     009D                     PSTRCON         equ	157	;# 
+   357     009E                     ADRESL          equ	158	;# 
+   358     009F                     ADCON1          equ	159	;# 
+   359     0105                     WDTCON          equ	261	;# 
+   360     0107                     CM1CON0         equ	263	;# 
+   361     0108                     CM2CON0         equ	264	;# 
+   362     0109                     CM2CON1         equ	265	;# 
+   363     010C                     EEDATA          equ	268	;# 
+   364     010C                     EEDAT           equ	268	;# 
+   365     010D                     EEADR           equ	269	;# 
+   366     010E                     EEDATH          equ	270	;# 
+   367     010F                     EEADRH          equ	271	;# 
+   368     0185                     SRCON           equ	389	;# 
+   369     0187                     BAUDCTL         equ	391	;# 
+   370     0188                     ANSEL           equ	392	;# 
+   371     0189                     ANSELH          equ	393	;# 
+   372     018C                     EECON1          equ	396	;# 
+   373     018D                     EECON2          equ	397	;# 
+   374     001A                     _RCREG          set	26
+   375     0019                     _TXREG          set	25
+   376     000C                     _PIR1bits       set	12
+   377     000B                     _INTCONbits     set	11
+   378     0018                     _RCSTAbits      set	24
+   379     0009                     _PORTEbits      set	9
+   380     000B                     _INTCON         set	11
+   381     0001                     _TMR0           set	1
+   382     0018                     _RCSTA          set	24
+   383     0009                     _PORTE          set	9
+   384     008C                     _PIE1bits       set	140
+   385     0098                     _TXSTAbits      set	152
+   386     008C                     _PIE1           set	140
+   387     0081                     _OPTION_REG     set	129
+   388     0099                     _SPBRG          set	153
+   389     0098                     _TXSTA          set	152
+   390     0089                     _TRISE          set	137
+   391     0188                     _ANSEL          set	392
+   392                           
+   393                           	psect	cinit
+   394     0011                     start_initialization:	
+   395                           ; #config settings
+   396                           
+   397     0011                     __initialization:
+   398                           
+   399                           ; Clear objects allocated to BANK0
+   400     0011  1383               	bcf	3,7	;select IRP bank0
+   401     0012  3020               	movlw	low __pbssBANK0
+   402     0013  0084               	movwf	4
+   403     0014  3057               	movlw	low (__pbssBANK0+55)
+   404     0015  120A  118A  2157  120A  118A  	fcall	clear_ram0
+   405     001A                     end_of_initialization:	
+   406                           ;End of C runtime variable initialization code
+   407                           
+   408     001A                     __end_of__initialization:
+   409     001A  0183               	clrf	3
+   410     001B  120A  118A  28E9   	ljmp	_main	;jump to C main() function
+   411                           
+   412                           	psect	bssBANK0
+   413     0020                     __pbssBANK0:
+   414     0020                     _UartStrk:
+   415     0020                     	ds	55
+   416                           
+   417                           	psect	clrtext
+   418     0157                     clear_ram0:	
+   419                           ;	Called with FSR containing the base address, and
+   420                           ;	W with the last address+1
+   421                           
+   422     0157  0064               	clrwdt	;clear the watchdog before getting into this loop
+   423     0158                     clrloop0:
+   424     0158  0180               	clrf	0	;clear RAM location pointed to by FSR
+   425     0159  0A84               	incf	4,f	;increment pointer
+   426     015A  0604               	xorwf	4,w	;XOR with final address
+   427     015B  1903               	btfsc	3,2	;have we reached the end yet?
+   428     015C  3400               	retlw	0	;all done for this memory range, return
+   429     015D  0604               	xorwf	4,w	;XOR again to restore value
+   430     015E  2958               	goto	clrloop0	;do the next byte
+   431                           
+   432                           	psect	cstackCOMMON
+   433     0070                     __pcstackCOMMON:
+   434     0070                     ?_G_PrtCnfg_Mth:
+   435     0070                     ?_G_UartCnfg_Mth:	
+   436                           ; 1 bytes @ 0x0
+   437                           
+   438     0070                     ?_G_IntrCnfg_Mth:	
+   439                           ; 1 bytes @ 0x0
+   440                           
+   441     0070                     ?_L_TmrCnfig_Mth:	
+   442                           ; 1 bytes @ 0x0
+   443                           
+   444     0070                     ?_G_ClrBuffr_Mth:	
+   445                           ; 1 bytes @ 0x0
+   446                           
+   447     0070                     ?_G_PwrOn_Mth:	
+   448                           ; 1 bytes @ 0x0
+   449                           
+   450     0070                     ?_ISR:	
+   451                           ; 1 bytes @ 0x0
+   452                           
+   453     0070                     ?_main:	
+   454                           ; 1 bytes @ 0x0
+   455                           
+   456     0070                     ??_ISR:	
+   457                           ; 2 bytes @ 0x0
+   458                           
+   459                           
+   460                           ; 1 bytes @ 0x0
+   461     0070                     	ds	5
+   462     0075                     ??_G_PrtCnfg_Mth:
+   463     0075                     ??_G_UartCnfg_Mth:	
+   464                           ; 1 bytes @ 0x5
+   465                           
+   466     0075                     ??_G_IntrCnfg_Mth:	
+   467                           ; 1 bytes @ 0x5
+   468                           
+   469     0075                     ??_L_TmrCnfig_Mth:	
+   470                           ; 1 bytes @ 0x5
+   471                           
+   472     0075                     ??_G_ClrBuffr_Mth:	
+   473                           ; 1 bytes @ 0x5
+   474                           
+   475     0075                     ??_G_PwrOn_Mth:	
+   476                           ; 1 bytes @ 0x5
+   477                           
+   478                           
+   479                           ; 1 bytes @ 0x5
+   480     0075                     	ds	2
+   481     0077                     G_ClrBuffr_Mth@L_BytCntr_Ui8:
+   482                           
+   483                           ; 1 bytes @ 0x7
+   484     0077                     	ds	1
+   485     0078                     ??_main:
+   486                           
+   487                           	psect	maintext
+   488     00E9                     __pmaintext:	
+   489                           ; 1 bytes @ 0x8
+   490 ;;
+   491 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   492 ;;
+   493 ;; *************** function _main *****************
+   494 ;; Defined at:
+   495 ;;		line 3 in file "main.c"
+   496 ;; Parameters:    Size  Location     Type
+   497 ;;		None
+   498 ;; Auto vars:     Size  Location     Type
+   499 ;;		None
+   500 ;; Return value:  Size  Location     Type
+   501 ;;                  2   59[None  ] int 
+   502 ;; Registers used:
+   503 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   504 ;; Tracked objects:
+   505 ;;		On entry : B00/0
+   506 ;;		On exit  : 0/0
+   507 ;;		Unchanged: 0/0
+   508 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   509 ;;      Params:         0       0       0       0       0
+   510 ;;      Locals:         0       0       0       0       0
+   511 ;;      Temps:          0       0       0       0       0
+   512 ;;      Totals:         0       0       0       0       0
+   513 ;;Total ram usage:        0 bytes
+   514 ;; Hardware stack levels required when called: 3
+   515 ;; This function calls:
+   516 ;;		_G_ClrBuffr_Mth
+   517 ;;		_G_PwrOn_Mth
+   518 ;; This function is called by:
+   519 ;;		Startup code after reset
+   520 ;; This function uses a non-reentrant model
+   521 ;;
+   522                           
+   523     00E9                     _main:	
+   524                           ;psect for function _main
+   525                           
+   526     00E9                     l678:	
+   527                           ;incstack = 0
+   528                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   529                           
+   530                           
+   531                           ;main.c: 5:     G_PwrOn_Mth();
+   532     00E9  120A  118A  2113  120A  118A  	fcall	_G_PwrOn_Mth
+   533     00EE                     l680:
+   534                           
+   535                           ;main.c: 6:     UartStrk.UartFlags.G_DlyStrt_F = True;
+   536     00EE  1283               	bcf	3,5	;RP0=0, select bank0
+   537     00EF  1303               	bcf	3,6	;RP1=0, select bank0
+   538     00F0  1556               	bsf	_UartStrk+54,2	;volatile
+   539     00F1                     l682:
+   540                           
+   541                           ;main.c: 8:     {;main.c: 9:         if (UartStrk.UartFlags.G_DlyTimOut_F)
+   542     00F1  1283               	bcf	3,5	;RP0=0, select bank0
+   543     00F2  1303               	bcf	3,6	;RP1=0, select bank0
+   544     00F3  1DD6               	btfss	_UartStrk+54,3	;volatile
+   545     00F4  28F6               	goto	u21
+   546     00F5  28F7               	goto	u20
+   547     00F6                     u21:
+   548     00F6  28F1               	goto	l682
+   549     00F7                     u20:
+   550     00F7                     l684:
+   551                           
+   552                           ;main.c: 10:         {;main.c: 11:             PORTEbits.RE0 = 1;
+   553     00F7  1409               	bsf	9,0	;volatile
+   554                           
+   555                           ;main.c: 12:             if (UartStrk.UartFlags.G_RxCmplt_F)
+   556     00F8  1CD6               	btfss	_UartStrk+54,1	;volatile
+   557     00F9  28FB               	goto	u31
+   558     00FA  28FC               	goto	u30
+   559     00FB                     u31:
+   560     00FB  2903               	goto	l694
+   561     00FC                     u30:
+   562     00FC                     l686:
+   563                           
+   564                           ;main.c: 13:             {;main.c: 14:                 UartStrk.UartFlags.G_RxCmplt_F = 
+      +                          False;
+   565     00FC  10D6               	bcf	_UartStrk+54,1	;volatile
+   566     00FD                     l688:
+   567                           
+   568                           ;main.c: 15:                 UartStrk.UartVars.G_TxBytCnt_Ui8 = UartStrk.UartVars.G_RxBy
+      +                          tCntr_Ui8;
+   569     00FD  0822               	movf	_UartStrk+2,w	;volatile
+   570     00FE  00A1               	movwf	_UartStrk+1	;volatile
+   571     00FF                     l690:
+   572                           
+   573                           ;main.c: 16:                 UartStrk.UartVars.G_TxBytCntr_Ui8 = 0;
+   574     00FF  01A0               	clrf	_UartStrk	;volatile
+   575     0100                     l692:
+   576                           
+   577                           ;main.c: 17:                 TXSTAbits.TXEN = 1;
+   578     0100  1683               	bsf	3,5	;RP0=1, select bank1
+   579     0101  1303               	bcf	3,6	;RP1=0, select bank1
+   580     0102  1698               	bsf	24,5	;volatile
+   581     0103                     l694:
+   582                           
+   583                           ;main.c: 19:             if (UartStrk.UartFlags.G_TxCmplt_F)
+   584     0103  1283               	bcf	3,5	;RP0=0, select bank0
+   585     0104  1C56               	btfss	_UartStrk+54,0	;volatile
+   586     0105  2907               	goto	u41
+   587     0106  2908               	goto	u40
+   588     0107                     u41:
+   589     0107  28F1               	goto	l682
+   590     0108                     u40:
+   591     0108                     l696:
+   592                           
+   593                           ;main.c: 20:             {;main.c: 21:                 UartStrk.UartFlags.G_TxCmplt_F = 
+      +                          False;
+   594     0108  1056               	bcf	_UartStrk+54,0	;volatile
+   595     0109                     l698:
+   596                           
+   597                           ;main.c: 22:                 UartStrk.UartVars.G_RxBytCntr_Ui8 = 0;
+   598     0109  01A2               	clrf	_UartStrk+2	;volatile
+   599     010A                     l700:
+   600                           
+   601                           ;main.c: 23:                 G_ClrBuffr_Mth();
+   602     010A  120A  118A  20BE  120A  118A  	fcall	_G_ClrBuffr_Mth
+   603     010F  28F1               	goto	l682
+   604     0110  120A  118A  280E   	ljmp	start
+   605     0113                     __end_of_main:
+   606                           
+   607                           	psect	text1
+   608     0113                     __ptext1:	
+   609 ;; *************** function _G_PwrOn_Mth *****************
+   610 ;; Defined at:
+   611 ;;		line 3 in file "system.c"
+   612 ;; Parameters:    Size  Location     Type
+   613 ;;		None
+   614 ;; Auto vars:     Size  Location     Type
+   615 ;;		None
+   616 ;; Return value:  Size  Location     Type
+   617 ;;                  1    wreg      void 
+   618 ;; Registers used:
+   619 ;;		status,2, status,0, pclath, cstack
+   620 ;; Tracked objects:
+   621 ;;		On entry : 0/0
+   622 ;;		On exit  : 0/0
+   623 ;;		Unchanged: 0/0
+   624 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   625 ;;      Params:         0       0       0       0       0
+   626 ;;      Locals:         0       0       0       0       0
+   627 ;;      Temps:          0       0       0       0       0
+   628 ;;      Totals:         0       0       0       0       0
+   629 ;;Total ram usage:        0 bytes
+   630 ;; Hardware stack levels used: 1
+   631 ;; Hardware stack levels required when called: 2
+   632 ;; This function calls:
+   633 ;;		_G_IntrCnfg_Mth
+   634 ;;		_G_PrtCnfg_Mth
+   635 ;;		_G_UartCnfg_Mth
+   636 ;;		_L_TmrCnfig_Mth
+   637 ;; This function is called by:
+   638 ;;		_main
+   639 ;; This function uses a non-reentrant model
+   640 ;;
+   641                           
+   642     0113                     _G_PwrOn_Mth:	
+   643                           ;psect for function _G_PwrOn_Mth
+   644                           
+   645     0113                     l666:	
+   646                           ;incstack = 0
+   647                           ; Regs used in _G_PwrOn_Mth: [status,2+status,0+pclath+cstack]
+   648                           
+   649                           
+   650                           ;system.c: 5:     G_PrtCnfg_Mth();
+   651     0113  120A  118A  213B  120A  118A  	fcall	_G_PrtCnfg_Mth
+   652                           
+   653                           ;system.c: 6:     G_UartCnfg_Mth();
+   654     0118  120A  118A  2128  120A  118A  	fcall	_G_UartCnfg_Mth
+   655                           
+   656                           ;system.c: 7:     G_IntrCnfg_Mth();
+   657     011D  120A  118A  214E  120A  118A  	fcall	_G_IntrCnfg_Mth
+   658                           
+   659                           ;system.c: 8:     L_TmrCnfig_Mth();
+   660     0122  120A  118A  2145  120A  118A  	fcall	_L_TmrCnfig_Mth
+   661     0127                     l31:
+   662     0127  0008               	return
+   663     0128                     __end_of_G_PwrOn_Mth:
+   664                           
+   665                           	psect	text2
+   666     0145                     __ptext2:	
+   667 ;; *************** function _L_TmrCnfig_Mth *****************
+   668 ;; Defined at:
+   669 ;;		line 27 in file "system.c"
+   670 ;; Parameters:    Size  Location     Type
+   671 ;;		None
+   672 ;; Auto vars:     Size  Location     Type
+   673 ;;		None
+   674 ;; Return value:  Size  Location     Type
+   675 ;;                  1    wreg      void 
+   676 ;; Registers used:
+   677 ;;		None
+   678 ;; Tracked objects:
+   679 ;;		On entry : 0/0
+   680 ;;		On exit  : 0/0
+   681 ;;		Unchanged: 0/0
+   682 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   683 ;;      Params:         0       0       0       0       0
+   684 ;;      Locals:         0       0       0       0       0
+   685 ;;      Temps:          0       0       0       0       0
+   686 ;;      Totals:         0       0       0       0       0
+   687 ;;Total ram usage:        0 bytes
+   688 ;; Hardware stack levels used: 1
+   689 ;; Hardware stack levels required when called: 1
+   690 ;; This function calls:
+   691 ;;		Nothing
+   692 ;; This function is called by:
+   693 ;;		_G_PwrOn_Mth
+   694 ;; This function uses a non-reentrant model
+   695 ;;
+   696                           
+   697     0145                     _L_TmrCnfig_Mth:	
+   698                           ;psect for function _L_TmrCnfig_Mth
+   699                           
+   700     0145                     l664:	
+   701                           ;incstack = 0
+   702                           ; Regs used in _L_TmrCnfig_Mth: []
+   703                           
+   704                           
+   705                           ;system.c: 29:     OPTION_REG = 0x01;
+   706     0145  3001               	movlw	1
+   707     0146  1683               	bsf	3,5	;RP0=1, select bank1
+   708     0147  1303               	bcf	3,6	;RP1=0, select bank1
+   709     0148  0081               	movwf	1	;volatile
+   710                           
+   711                           ;system.c: 30:     TMR0 = 0x05;
+   712     0149  3005               	movlw	5
+   713     014A  1283               	bcf	3,5	;RP0=0, select bank0
+   714     014B  1303               	bcf	3,6	;RP1=0, select bank0
+   715     014C  0081               	movwf	1	;volatile
+   716     014D                     l40:
+   717     014D  0008               	return
+   718     014E                     __end_of_L_TmrCnfig_Mth:
+   719                           
+   720                           	psect	text3
+   721     0128                     __ptext3:	
+   722 ;; *************** function _G_UartCnfg_Mth *****************
+   723 ;; Defined at:
+   724 ;;		line 18 in file "system.c"
+   725 ;; Parameters:    Size  Location     Type
+   726 ;;		None
+   727 ;; Auto vars:     Size  Location     Type
+   728 ;;		None
+   729 ;; Return value:  Size  Location     Type
+   730 ;;                  1    wreg      void 
+   731 ;; Registers used:
+   732 ;;		status,2
+   733 ;; Tracked objects:
+   734 ;;		On entry : 0/0
+   735 ;;		On exit  : 0/0
+   736 ;;		Unchanged: 0/0
+   737 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   738 ;;      Params:         0       0       0       0       0
+   739 ;;      Locals:         0       0       0       0       0
+   740 ;;      Temps:          0       0       0       0       0
+   741 ;;      Totals:         0       0       0       0       0
+   742 ;;Total ram usage:        0 bytes
+   743 ;; Hardware stack levels used: 1
+   744 ;; Hardware stack levels required when called: 1
+   745 ;; This function calls:
+   746 ;;		Nothing
+   747 ;; This function is called by:
+   748 ;;		_G_PwrOn_Mth
+   749 ;; This function uses a non-reentrant model
+   750 ;;
+   751                           
+   752     0128                     _G_UartCnfg_Mth:	
+   753                           ;psect for function _G_UartCnfg_Mth
+   754                           
+   755     0128                     l650:	
+   756                           ;incstack = 0
+   757                           ; Regs used in _G_UartCnfg_Mth: [status,2]
+   758                           
+   759                           
+   760                           ;system.c: 20:     TXSTA = 0x00;
+   761     0128  1683               	bsf	3,5	;RP0=1, select bank1
+   762     0129  1303               	bcf	3,6	;RP1=0, select bank1
+   763     012A  0198               	clrf	24	;volatile
+   764                           
+   765                           ;system.c: 21:     RCSTA = 0x00;
+   766     012B  1283               	bcf	3,5	;RP0=0, select bank0
+   767     012C  1303               	bcf	3,6	;RP1=0, select bank0
+   768     012D  0198               	clrf	24	;volatile
+   769     012E                     l652:
+   770                           
+   771                           ;system.c: 22:     TXSTA = 0x4;
+   772     012E  3004               	movlw	4
+   773     012F  1683               	bsf	3,5	;RP0=1, select bank1
+   774     0130  1303               	bcf	3,6	;RP1=0, select bank1
+   775     0131  0098               	movwf	24	;volatile
+   776     0132                     l654:
+   777                           
+   778                           ;system.c: 23:     RCSTA = 0x80 | 0x10;
+   779     0132  3090               	movlw	144
+   780     0133  1283               	bcf	3,5	;RP0=0, select bank0
+   781     0134  1303               	bcf	3,6	;RP1=0, select bank0
+   782     0135  0098               	movwf	24	;volatile
+   783     0136                     l656:
+   784                           
+   785                           ;system.c: 24:     SPBRG = 0x33;
+   786     0136  3033               	movlw	51
+   787     0137  1683               	bsf	3,5	;RP0=1, select bank1
+   788     0138  1303               	bcf	3,6	;RP1=0, select bank1
+   789     0139  0099               	movwf	25	;volatile
+   790     013A                     l37:
+   791     013A  0008               	return
+   792     013B                     __end_of_G_UartCnfg_Mth:
+   793                           
+   794                           	psect	text4
+   795     013B                     __ptext4:	
+   796 ;; *************** function _G_PrtCnfg_Mth *****************
+   797 ;; Defined at:
+   798 ;;		line 11 in file "system.c"
+   799 ;; Parameters:    Size  Location     Type
+   800 ;;		None
+   801 ;; Auto vars:     Size  Location     Type
+   802 ;;		None
+   803 ;; Return value:  Size  Location     Type
+   804 ;;                  1    wreg      void 
+   805 ;; Registers used:
+   806 ;;		status,2
+   807 ;; Tracked objects:
+   808 ;;		On entry : 0/0
+   809 ;;		On exit  : 0/0
+   810 ;;		Unchanged: 0/0
+   811 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   812 ;;      Params:         0       0       0       0       0
+   813 ;;      Locals:         0       0       0       0       0
+   814 ;;      Temps:          0       0       0       0       0
+   815 ;;      Totals:         0       0       0       0       0
+   816 ;;Total ram usage:        0 bytes
+   817 ;; Hardware stack levels used: 1
+   818 ;; Hardware stack levels required when called: 1
+   819 ;; This function calls:
+   820 ;;		Nothing
+   821 ;; This function is called by:
+   822 ;;		_G_PwrOn_Mth
+   823 ;; This function uses a non-reentrant model
+   824 ;;
+   825                           
+   826     013B                     _G_PrtCnfg_Mth:	
+   827                           ;psect for function _G_PrtCnfg_Mth
+   828                           
+   829     013B                     l648:	
+   830                           ;incstack = 0
+   831                           ; Regs used in _G_PrtCnfg_Mth: [status,2]
+   832                           
+   833                           
+   834                           ;system.c: 13:     TRISE = 0x00;
+   835     013B  1683               	bsf	3,5	;RP0=1, select bank1
+   836     013C  1303               	bcf	3,6	;RP1=0, select bank1
+   837     013D  0189               	clrf	9	;volatile
+   838                           
+   839                           ;system.c: 14:     PORTE = 0x00;
+   840     013E  1283               	bcf	3,5	;RP0=0, select bank0
+   841     013F  1303               	bcf	3,6	;RP1=0, select bank0
+   842     0140  0189               	clrf	9	;volatile
+   843                           
+   844                           ;system.c: 15:     ANSEL = 0x00;
+   845     0141  1683               	bsf	3,5	;RP0=1, select bank3
+   846     0142  1703               	bsf	3,6	;RP1=1, select bank3
+   847     0143  0188               	clrf	8	;volatile
+   848     0144                     l34:
+   849     0144  0008               	return
+   850     0145                     __end_of_G_PrtCnfg_Mth:
+   851                           
+   852                           	psect	text5
+   853     014E                     __ptext5:	
+   854 ;; *************** function _G_IntrCnfg_Mth *****************
+   855 ;; Defined at:
+   856 ;;		line 33 in file "system.c"
+   857 ;; Parameters:    Size  Location     Type
+   858 ;;		None
+   859 ;; Auto vars:     Size  Location     Type
+   860 ;;		None
+   861 ;; Return value:  Size  Location     Type
+   862 ;;                  1    wreg      void 
+   863 ;; Registers used:
+   864 ;;		status,2
+   865 ;; Tracked objects:
+   866 ;;		On entry : 0/0
+   867 ;;		On exit  : 0/0
+   868 ;;		Unchanged: 0/0
+   869 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   870 ;;      Params:         0       0       0       0       0
+   871 ;;      Locals:         0       0       0       0       0
+   872 ;;      Temps:          0       0       0       0       0
+   873 ;;      Totals:         0       0       0       0       0
+   874 ;;Total ram usage:        0 bytes
+   875 ;; Hardware stack levels used: 1
+   876 ;; Hardware stack levels required when called: 1
+   877 ;; This function calls:
+   878 ;;		Nothing
+   879 ;; This function is called by:
+   880 ;;		_G_PwrOn_Mth
+   881 ;; This function uses a non-reentrant model
+   882 ;;
+   883                           
+   884     014E                     _G_IntrCnfg_Mth:	
+   885                           ;psect for function _G_IntrCnfg_Mth
+   886                           
+   887     014E                     l658:	
+   888                           ;incstack = 0
+   889                           ; Regs used in _G_IntrCnfg_Mth: [status,2]
+   890                           
+   891                           
+   892                           ;system.c: 35:     INTCON = 0x00;
+   893     014E  018B               	clrf	11	;volatile
+   894                           
+   895                           ;system.c: 36:     PIE1 = 0x00;
+   896     014F  1683               	bsf	3,5	;RP0=1, select bank1
+   897     0150  1303               	bcf	3,6	;RP1=0, select bank1
+   898     0151  018C               	clrf	12	;volatile
+   899     0152                     l660:
+   900                           
+   901                           ;system.c: 37:     PIE1 = 0x10 | 0x20;
+   902     0152  3030               	movlw	48
+   903     0153  008C               	movwf	12	;volatile
+   904     0154                     l662:
+   905                           
+   906                           ;system.c: 38:     INTCON = 0x80 | 0x40 | 0x20;
+   907     0154  30E0               	movlw	224
+   908     0155  008B               	movwf	11	;volatile
+   909     0156                     l43:
+   910     0156  0008               	return
+   911     0157                     __end_of_G_IntrCnfg_Mth:
+   912                           
+   913                           	psect	text6
+   914     00BE                     __ptext6:	
+   915 ;; *************** function _G_ClrBuffr_Mth *****************
+   916 ;; Defined at:
+   917 ;;		line 30 in file "main.c"
+   918 ;; Parameters:    Size  Location     Type
+   919 ;;		None
+   920 ;; Auto vars:     Size  Location     Type
+   921 ;;  L_BytCntr_Ui    1    7[COMMON] unsigned char 
+   922 ;; Return value:  Size  Location     Type
+   923 ;;                  1    wreg      void 
+   924 ;; Registers used:
+   925 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   926 ;; Tracked objects:
+   927 ;;		On entry : 0/0
+   928 ;;		On exit  : 0/0
+   929 ;;		Unchanged: 0/0
+   930 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   931 ;;      Params:         0       0       0       0       0
+   932 ;;      Locals:         1       0       0       0       0
+   933 ;;      Temps:          2       0       0       0       0
+   934 ;;      Totals:         3       0       0       0       0
+   935 ;;Total ram usage:        3 bytes
+   936 ;; Hardware stack levels used: 1
+   937 ;; Hardware stack levels required when called: 1
+   938 ;; This function calls:
+   939 ;;		Nothing
+   940 ;; This function is called by:
+   941 ;;		_main
+   942 ;; This function uses a non-reentrant model
+   943 ;;
+   944                           
+   945     00BE                     _G_ClrBuffr_Mth:	
+   946                           ;psect for function _G_ClrBuffr_Mth
+   947                           
+   948     00BE                     l668:	
+   949                           ;incstack = 0
+   950                           ; Regs used in _G_ClrBuffr_Mth: [wreg-fsr0h+status,2+status,0]
+   951                           
+   952                           
+   953                           ;main.c: 32:     RCSTAbits.CREN = 0;
+   954     00BE  1283               	bcf	3,5	;RP0=0, select bank0
+   955     00BF  1303               	bcf	3,6	;RP1=0, select bank0
+   956     00C0  1218               	bcf	24,4	;volatile
+   957     00C1                     l670:
+   958                           
+   959                           ;main.c: 33:     uint8_t L_BytCntr_Ui8 = 0;
+   960     00C1  01F7               	clrf	G_ClrBuffr_Mth@L_BytCntr_Ui8
+   961                           
+   962                           ;main.c: 34:     for(; UartStrk.UartVars.G_Buffr_Ui8[L_BytCntr_Ui8] != '\0'; L_BytCntr_U
+      +                          i8++)
+   963     00C2  28D3               	goto	l676
+   964     00C3                     l672:
+   965                           
+   966                           ;main.c: 35:     {;main.c: 36:         UartStrk.UartVars.G_Buffr_Ui8[L_BytCntr_Ui8] = 0;
+   967     00C3  0877               	movf	G_ClrBuffr_Mth@L_BytCntr_Ui8,w
+   968     00C4  3E04               	addlw	4
+   969     00C5  3E20               	addlw	low _UartStrk
+   970     00C6  00F5               	movwf	??_G_ClrBuffr_Mth
+   971     00C7  3000               	movlw	high _UartStrk
+   972     00C8  1803               	skipnc
+   973     00C9  3E01               	addlw	1
+   974     00CA  00F6               	movwf	??_G_ClrBuffr_Mth+1
+   975     00CB  0875               	movf	??_G_ClrBuffr_Mth,w
+   976     00CC  0084               	movwf	4
+   977     00CD  1783               	bsf	3,7
+   978     00CE  1C76               	btfss	??_G_ClrBuffr_Mth+1,0
+   979     00CF  1383               	bcf	3,7
+   980     00D0  0180               	clrf	0
+   981     00D1                     l674:
+   982                           
+   983                           ;main.c: 37:     }
+   984     00D1  3001               	movlw	1
+   985     00D2  07F7               	addwf	G_ClrBuffr_Mth@L_BytCntr_Ui8,f
+   986     00D3                     l676:
+   987     00D3  0877               	movf	G_ClrBuffr_Mth@L_BytCntr_Ui8,w
+   988     00D4  3E04               	addlw	4
+   989     00D5  3E20               	addlw	low _UartStrk
+   990     00D6  00F5               	movwf	??_G_ClrBuffr_Mth
+   991     00D7  3000               	movlw	high _UartStrk
+   992     00D8  1803               	skipnc
+   993     00D9  3E01               	addlw	1
+   994     00DA  00F6               	movwf	??_G_ClrBuffr_Mth+1
+   995     00DB  0875               	movf	??_G_ClrBuffr_Mth,w
+   996     00DC  0084               	movwf	4
+   997     00DD  1783               	bsf	3,7
+   998     00DE  1C76               	btfss	??_G_ClrBuffr_Mth+1,0
+   999     00DF  1383               	bcf	3,7
+  1000     00E0  0800               	movf	0,w
+  1001     00E1  1D03               	btfss	3,2
+  1002     00E2  28E4               	goto	u11
+  1003     00E3  28E5               	goto	u10
+  1004     00E4                     u11:
+  1005     00E4  28C3               	goto	l672
+  1006     00E5                     u10:
+  1007     00E5                     l71:
+  1008                           
+  1009                           ;main.c: 38:     RCSTAbits.CREN = 1;
+  1010     00E5  1283               	bcf	3,5	;RP0=0, select bank0
+  1011     00E6  1303               	bcf	3,6	;RP1=0, select bank0
+  1012     00E7  1618               	bsf	24,4	;volatile
+  1013     00E8                     l72:
+  1014     00E8  0008               	return
+  1015     00E9                     __end_of_G_ClrBuffr_Mth:
+  1016                           
+  1017                           	psect	text7
+  1018     001E                     __ptext7:	
+  1019 ;; *************** function _ISR *****************
+  1020 ;; Defined at:
+  1021 ;;		line 3 in file "ISR.c"
+  1022 ;; Parameters:    Size  Location     Type
+  1023 ;;		None
+  1024 ;; Auto vars:     Size  Location     Type
+  1025 ;;		None
+  1026 ;; Return value:  Size  Location     Type
+  1027 ;;                  1    wreg      void 
+  1028 ;; Registers used:
+  1029 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1030 ;; Tracked objects:
+  1031 ;;		On entry : 0/0
+  1032 ;;		On exit  : 0/0
+  1033 ;;		Unchanged: 0/0
+  1034 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1035 ;;      Params:         0       0       0       0       0
+  1036 ;;      Locals:         0       0       0       0       0
+  1037 ;;      Temps:          5       0       0       0       0
+  1038 ;;      Totals:         5       0       0       0       0
+  1039 ;;Total ram usage:        5 bytes
+  1040 ;; Hardware stack levels used: 1
+  1041 ;; This function calls:
+  1042 ;;		Nothing
+  1043 ;; This function is called by:
+  1044 ;;		Interrupt level 1
+  1045 ;; This function uses a non-reentrant model
+  1046 ;;
+  1047                           
+  1048     001E                     _ISR:	
+  1049                           ;psect for function _ISR
+  1050                           
+  1051     001E                     i1l702:
+  1052                           
+  1053                           ;ISR.c: 5:     if(INTCONbits.T0IE && INTCONbits.T0IF)
+  1054     001E  1E8B               	btfss	11,5	;volatile
+  1055     001F  2821               	goto	u5_21
+  1056     0020  2822               	goto	u5_20
+  1057     0021                     u5_21:
+  1058     0021  283A               	goto	i1l716
+  1059     0022                     u5_20:
+  1060     0022                     i1l704:
+  1061     0022  1D0B               	btfss	11,2	;volatile
+  1062     0023  2825               	goto	u6_21
+  1063     0024  2826               	goto	u6_20
+  1064     0025                     u6_21:
+  1065     0025  283A               	goto	i1l716
+  1066     0026                     u6_20:
+  1067     0026                     i1l706:
+  1068                           
+  1069                           ;ISR.c: 6:     {;ISR.c: 7:         INTCONbits.T0IF = 0;
+  1070     0026  110B               	bcf	11,2	;volatile
+  1071                           
+  1072                           ;ISR.c: 8:         TMR0 = 0x05;
+  1073     0027  3005               	movlw	5
+  1074     0028  1283               	bcf	3,5	;RP0=0, select bank0
+  1075     0029  1303               	bcf	3,6	;RP1=0, select bank0
+  1076     002A  0081               	movwf	1	;volatile
+  1077                           
+  1078                           ;ISR.c: 9:         if (UartStrk.UartFlags.G_DlyStrt_F)
+  1079     002B  1D56               	btfss	_UartStrk+54,2	;volatile
+  1080     002C  282E               	goto	u7_21
+  1081     002D  282F               	goto	u7_20
+  1082     002E                     u7_21:
+  1083     002E  283A               	goto	i1l716
+  1084     002F                     u7_20:
+  1085     002F                     i1l708:
+  1086                           
+  1087                           ;ISR.c: 10:         {;ISR.c: 11:             UartStrk.UartVars.G_DlayCntr_Ui8++;
+  1088     002F  3001               	movlw	1
+  1089     0030  07A3               	addwf	_UartStrk+3,f	;volatile
+  1090     0031                     i1l710:
+  1091                           
+  1092                           ;ISR.c: 12:             if(UartStrk.UartVars.G_DlayCntr_Ui8 > 20)
+  1093     0031  3015               	movlw	21
+  1094     0032  0223               	subwf	_UartStrk+3,w	;volatile
+  1095     0033  1C03               	skipc
+  1096     0034  2836               	goto	u8_21
+  1097     0035  2837               	goto	u8_20
+  1098     0036                     u8_21:
+  1099     0036  283A               	goto	i1l716
+  1100     0037                     u8_20:
+  1101     0037                     i1l712:
+  1102                           
+  1103                           ;ISR.c: 13:             {;ISR.c: 14:                 UartStrk.UartFlags.G_DlyStrt_F = Fa
+      +                          lse;
+  1104     0037  1156               	bcf	_UartStrk+54,2	;volatile
+  1105                           
+  1106                           ;ISR.c: 15:                 UartStrk.UartFlags.G_DlyTimOut_F = True;
+  1107     0038  15D6               	bsf	_UartStrk+54,3	;volatile
+  1108     0039                     i1l714:
+  1109                           
+  1110                           ;ISR.c: 16:                 UartStrk.UartVars.G_DlayCntr_Ui8 = 0;
+  1111     0039  01A3               	clrf	_UartStrk+3	;volatile
+  1112     003A                     i1l716:
+  1113                           
+  1114                           ;ISR.c: 22:     if (PIE1bits.TXIE && PIR1bits.TXIF)
+  1115     003A  1683               	bsf	3,5	;RP0=1, select bank1
+  1116     003B  1303               	bcf	3,6	;RP1=0, select bank1
+  1117     003C  1E0C               	btfss	12,4	;volatile
+  1118     003D  283F               	goto	u9_21
+  1119     003E  2840               	goto	u9_20
+  1120     003F                     u9_21:
+  1121     003F  286C               	goto	i1l96
+  1122     0040                     u9_20:
+  1123     0040                     i1l718:
+  1124     0040  1283               	bcf	3,5	;RP0=0, select bank0
+  1125     0041  1303               	bcf	3,6	;RP1=0, select bank0
+  1126     0042  1E0C               	btfss	12,4	;volatile
+  1127     0043  2845               	goto	u10_21
+  1128     0044  2846               	goto	u10_20
+  1129     0045                     u10_21:
+  1130     0045  286C               	goto	i1l96
+  1131     0046                     u10_20:
+  1132     0046                     i1l720:
+  1133                           
+  1134                           ;ISR.c: 23:     {;ISR.c: 24:        if (TXSTAbits.TRMT)
+  1135     0046  1683               	bsf	3,5	;RP0=1, select bank1
+  1136     0047  1303               	bcf	3,6	;RP1=0, select bank1
+  1137     0048  1C98               	btfss	24,1	;volatile
+  1138     0049  284B               	goto	u11_21
+  1139     004A  284C               	goto	u11_20
+  1140     004B                     u11_21:
+  1141     004B  286C               	goto	i1l96
+  1142     004C                     u11_20:
+  1143     004C                     i1l722:
+  1144                           
+  1145                           ;ISR.c: 25:        {;ISR.c: 26:             if (UartStrk.UartVars.G_TxBytCnt_Ui8 >= Uart
+      +                          Strk.UartVars.G_TxBytCntr_Ui8)
+  1146     004C  1283               	bcf	3,5	;RP0=0, select bank0
+  1147     004D  1303               	bcf	3,6	;RP1=0, select bank0
+  1148     004E  0820               	movf	_UartStrk,w	;volatile
+  1149     004F  0221               	subwf	_UartStrk+1,w	;volatile
+  1150     0050  1C03               	skipc
+  1151     0051  2853               	goto	u12_21
+  1152     0052  2854               	goto	u12_20
+  1153     0053                     u12_21:
+  1154     0053  2866               	goto	i1l98
+  1155     0054                     u12_20:
+  1156     0054                     i1l724:
+  1157                           
+  1158                           ;ISR.c: 27:             {;ISR.c: 28:                 TXREG = UartStrk.UartVars.G_Buffr_U
+      +                          i8[UartStrk.UartVars.G_TxBytCntr_Ui8];
+  1159     0054  0820               	movf	_UartStrk,w
+  1160     0055  3E04               	addlw	4
+  1161     0056  3E20               	addlw	low _UartStrk
+  1162     0057  00F0               	movwf	??_ISR
+  1163     0058  3000               	movlw	high _UartStrk
+  1164     0059  1803               	skipnc
+  1165     005A  3E01               	addlw	1
+  1166     005B  00F1               	movwf	??_ISR+1
+  1167     005C  0870               	movf	??_ISR,w
+  1168     005D  0084               	movwf	4
+  1169     005E  1783               	bsf	3,7
+  1170     005F  1C71               	btfss	??_ISR+1,0
+  1171     0060  1383               	bcf	3,7
+  1172     0061  0800               	movf	0,w
+  1173     0062  0099               	movwf	25	;volatile
+  1174     0063                     i1l726:
+  1175                           
+  1176                           ;ISR.c: 29:                 UartStrk.UartVars.G_TxBytCntr_Ui8++;
+  1177     0063  3001               	movlw	1
+  1178     0064  07A0               	addwf	_UartStrk,f	;volatile
+  1179                           
+  1180                           ;ISR.c: 30:             }
+  1181     0065  286C               	goto	i1l96
+  1182     0066                     i1l98:	
+  1183                           ;ISR.c: 31:             else
+  1184                           
+  1185                           
+  1186                           ;ISR.c: 32:             {;ISR.c: 33:                 TXSTAbits.TXEN = 0;
+  1187     0066  1683               	bsf	3,5	;RP0=1, select bank1
+  1188     0067  1303               	bcf	3,6	;RP1=0, select bank1
+  1189     0068  1298               	bcf	24,5	;volatile
+  1190                           
+  1191                           ;ISR.c: 34:                 UartStrk.UartFlags.G_TxCmplt_F = True;
+  1192     0069  1283               	bcf	3,5	;RP0=0, select bank0
+  1193     006A  1303               	bcf	3,6	;RP1=0, select bank0
+  1194     006B  1456               	bsf	_UartStrk+54,0	;volatile
+  1195     006C                     i1l96:	
+  1196                           ;ISR.c: 37:     }
+  1197                           
+  1198                           
+  1199                           ;ISR.c: 38:     if (PIE1bits.RCIE && PIR1bits.RCIF)
+  1200     006C  1683               	bsf	3,5	;RP0=1, select bank1
+  1201     006D  1303               	bcf	3,6	;RP1=0, select bank1
+  1202     006E  1E8C               	btfss	12,5	;volatile
+  1203     006F  2871               	goto	u13_21
+  1204     0070  2872               	goto	u13_20
+  1205     0071                     u13_21:
+  1206     0071  28B5               	goto	i1l104
+  1207     0072                     u13_20:
+  1208     0072                     i1l728:
+  1209     0072  1283               	bcf	3,5	;RP0=0, select bank0
+  1210     0073  1303               	bcf	3,6	;RP1=0, select bank0
+  1211     0074  1E8C               	btfss	12,5	;volatile
+  1212     0075  2877               	goto	u14_21
+  1213     0076  2878               	goto	u14_20
+  1214     0077                     u14_21:
+  1215     0077  28B5               	goto	i1l104
+  1216     0078                     u14_20:
+  1217     0078                     i1l730:
+  1218                           
+  1219                           ;ISR.c: 39:     {;ISR.c: 40:         UartStrk.UartVars.G_Buffr_Ui8[UartStrk.UartVars.G_R
+      +                          xBytCntr_Ui8] = RCREG;
+  1220     0078  0822               	movf	_UartStrk+2,w	;volatile
+  1221     0079  3E04               	addlw	4
+  1222     007A  3E20               	addlw	low _UartStrk
+  1223     007B  00F0               	movwf	??_ISR
+  1224     007C  3000               	movlw	high _UartStrk
+  1225     007D  1803               	skipnc
+  1226     007E  3E01               	addlw	1
+  1227     007F  00F1               	movwf	??_ISR+1
+  1228     0080  0870               	movf	??_ISR,w
+  1229     0081  0084               	movwf	4
+  1230     0082  1783               	bsf	3,7
+  1231     0083  1C71               	btfss	??_ISR+1,0
+  1232     0084  1383               	bcf	3,7
+  1233     0085  081A               	movf	26,w	;volatile
+  1234     0086  0080               	movwf	0
+  1235     0087                     i1l732:
+  1236                           
+  1237                           ;ISR.c: 41:         UartStrk.UartVars.G_RxBytCntr_Ui8++;
+  1238     0087  3001               	movlw	1
+  1239     0088  07A2               	addwf	_UartStrk+2,f	;volatile
+  1240     0089                     i1l734:
+  1241                           
+  1242                           ;ISR.c: 42:         if ((RCREG == '\n') || (RCREG == '\r'))
+  1243     0089  300A               	movlw	10
+  1244     008A  061A               	xorwf	26,w	;volatile
+  1245     008B  1903               	btfsc	3,2
+  1246     008C  288E               	goto	u15_21
+  1247     008D  288F               	goto	u15_20
+  1248     008E                     u15_21:
+  1249     008E  2895               	goto	i1l738
+  1250     008F                     u15_20:
+  1251     008F                     i1l736:
+  1252     008F  300D               	movlw	13
+  1253     0090  061A               	xorwf	26,w	;volatile
+  1254     0091  1D03               	btfss	3,2
+  1255     0092  2894               	goto	u16_21
+  1256     0093  2895               	goto	u16_20
+  1257     0094                     u16_21:
+  1258     0094  28B5               	goto	i1l104
+  1259     0095                     u16_20:
+  1260     0095                     i1l738:
+  1261                           
+  1262                           ;ISR.c: 43:         {;ISR.c: 44:             UartStrk.UartVars.G_Buffr_Ui8[UartStrk.Uart
+      +                          Vars.G_RxBytCntr_Ui8] = '\n';
+  1263     0095  0822               	movf	_UartStrk+2,w	;volatile
+  1264     0096  3E04               	addlw	4
+  1265     0097  3E20               	addlw	low _UartStrk
+  1266     0098  00F0               	movwf	??_ISR
+  1267     0099  3000               	movlw	high _UartStrk
+  1268     009A  1803               	skipnc
+  1269     009B  3E01               	addlw	1
+  1270     009C  00F1               	movwf	??_ISR+1
+  1271     009D  0870               	movf	??_ISR,w
+  1272     009E  0084               	movwf	4
+  1273     009F  1783               	bsf	3,7
+  1274     00A0  1C71               	btfss	??_ISR+1,0
+  1275     00A1  1383               	bcf	3,7
+  1276     00A2  300A               	movlw	10
+  1277     00A3  0080               	movwf	0
+  1278     00A4                     i1l740:
+  1279                           
+  1280                           ;ISR.c: 45:             UartStrk.UartVars.G_RxBytCntr_Ui8++;
+  1281     00A4  3001               	movlw	1
+  1282     00A5  07A2               	addwf	_UartStrk+2,f	;volatile
+  1283     00A6                     i1l742:
+  1284                           
+  1285                           ;ISR.c: 46:             UartStrk.UartVars.G_Buffr_Ui8[UartStrk.UartVars.G_RxBytCntr_Ui8]
+      +                           = '\0';
+  1286     00A6  0822               	movf	_UartStrk+2,w	;volatile
+  1287     00A7  3E04               	addlw	4
+  1288     00A8  3E20               	addlw	low _UartStrk
+  1289     00A9  00F0               	movwf	??_ISR
+  1290     00AA  3000               	movlw	high _UartStrk
+  1291     00AB  1803               	skipnc
+  1292     00AC  3E01               	addlw	1
+  1293     00AD  00F1               	movwf	??_ISR+1
+  1294     00AE  0870               	movf	??_ISR,w
+  1295     00AF  0084               	movwf	4
+  1296     00B0  1783               	bsf	3,7
+  1297     00B1  1C71               	btfss	??_ISR+1,0
+  1298     00B2  1383               	bcf	3,7
+  1299     00B3  0180               	clrf	0
+  1300     00B4                     i1l744:
+  1301                           
+  1302                           ;ISR.c: 47:             UartStrk.UartFlags.G_RxCmplt_F = True;
+  1303     00B4  14D6               	bsf	_UartStrk+54,1	;volatile
+  1304     00B5                     i1l104:
+  1305     00B5  0874               	movf	??_ISR+4,w
+  1306     00B6  008A               	movwf	10
+  1307     00B7  0873               	movf	??_ISR+3,w
+  1308     00B8  0084               	movwf	4
+  1309     00B9  0E72               	swapf	??_ISR+2,w
+  1310     00BA  0083               	movwf	3
+  1311     00BB  0EFE               	swapf	btemp,f
+  1312     00BC  0E7E               	swapf	btemp,w
+  1313     00BD  0009               	retfie
+  1314     00BE                     __end_of_ISR:
+  1315     0002                     ___latbits      equ	2
+  1316     007E                     btemp           set	126	;btemp
+  1317     007E                     wtemp0          set	126
+  1318                           
+  1319                           	psect	intentry
+  1320     0004                     __pintentry:	
+  1321                           ;incstack = 0
+  1322                           ; Regs used in _ISR: [wreg-fsr0h+status,2+status,0]
+  1323                           
+  1324     0004                     interrupt_function:
+  1325     007E                     saved_w         set	btemp
+  1326     0004  00FE               	movwf	btemp
+  1327     0005  0E03               	swapf	3,w
+  1328     0006  00F2               	movwf	??_ISR+2
+  1329     0007  0804               	movf	4,w
+  1330     0008  00F3               	movwf	??_ISR+3
+  1331     0009  080A               	movf	10,w
+  1332     000A  00F4               	movwf	??_ISR+4
+  1333     000B  120A  118A  281E   	ljmp	_ISR
+  1334                           
+  1335                           	psect	config
+  1336                           
+  1337                           ;Config register CONFIG1 @ 0x2007
+  1338                           ;	Oscillator Selection bits
+  1339                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+      +                          unction on RA7/OSC1/CLKIN
+  1340                           ;	Watchdog Timer Enable bit
+  1341                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1342                           ;	Power-up Timer Enable bit
+  1343                           ;	PWRTE = OFF, PWRT disabled
+  1344                           ;	RE3/MCLR pin function select bit
+  1345                           ;	MCLRE = ON, RE3/MCLR pin function is MCLR
+  1346                           ;	Code Protection bit
+  1347                           ;	CP = OFF, Program memory code protection is disabled
+  1348                           ;	Data Code Protection bit
+  1349                           ;	CPD = OFF, Data memory code protection is disabled
+  1350                           ;	Brown Out Reset Selection bits
+  1351                           ;	BOREN = ON, BOR enabled
+  1352                           ;	Internal External Switchover bit
+  1353                           ;	IESO = ON, Internal/External Switchover mode is enabled
+  1354                           ;	Fail-Safe Clock Monitor Enabled bit
+  1355                           ;	FCMEN = ON, Fail-Safe Clock Monitor is enabled
+  1356                           ;	Low Voltage Programming Enable bit
+  1357                           ;	LVP = ON, RB3/PGM pin has PGM function, low voltage programming enabled
+  1358                           ;	In-Circuit Debugger Mode bit
+  1359                           ;	DEBUG = 0x1, unprogrammed default
+  1360     2007                     	org	8199
+  1361     2007  3FF4               	dw	16372
+  1362                           
+  1363                           ;Config register CONFIG2 @ 0x2008
+  1364                           ;	Brown-out Reset Selection bit
+  1365                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1366                           ;	Flash Program Memory Self Write Enable bits
+  1367                           ;	WRT = OFF, Write protection off
+  1368     2008                     	org	8200
+  1369     2008  3FFF               	dw	16383
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         55
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      8       8
+    BANK0            80      0      55
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_G_ClrBuffr_Mth
+
+Critical Paths under _ISR in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _ISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _ISR in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _ISR in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0      30
+                     _G_ClrBuffr_Mth
+                        _G_PwrOn_Mth
+ ---------------------------------------------------------------------------------
+ (1) _G_PwrOn_Mth                                          0     0      0       0
+                     _G_IntrCnfg_Mth
+                      _G_PrtCnfg_Mth
+                     _G_UartCnfg_Mth
+                     _L_TmrCnfig_Mth
+ ---------------------------------------------------------------------------------
+ (2) _L_TmrCnfig_Mth                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _G_UartCnfg_Mth                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _G_PrtCnfg_Mth                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _G_IntrCnfg_Mth                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _G_ClrBuffr_Mth                                       3     3      0      30
+                                              5 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _ISR                                                  5     5      0       0
+                                              0 COMMON     5     5      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _G_ClrBuffr_Mth
+   _G_PwrOn_Mth
+     _G_IntrCnfg_Mth
+     _G_PrtCnfg_Mth
+     _G_UartCnfg_Mth
+     _L_TmrCnfig_Mth
+
+ _ISR (ROOT)
+
+Address spaces:
+Name               Size   Autos  Total    Usage
+BITCOMMON           14      0       0      0.0%
+BITBANK0            80      0       0      0.0%
+BITBANK1            80      0       0      0.0%
+BITBANK3            96      0       0      0.0%
+BITBANK2            96      0       0      0.0%
+COMMON              14      8       8     57.1%
+BANK0               80      0      55     68.8%
+BANK1               80      0       0      0.0%
+BANK3               96      0       0      0.0%
+BANK2               96      0       0      0.0%
+STACK                0      0       0      0.0%
+DATA                 0      0      63      0.0%
+
+
+Microchip Technology PIC Macro Assembler V3.00 build 20241204225717 
+Symbol Table                                                                                   Tue May 05 19:56:04 2026
+
+                         l31 0127                           l40 014D                           l34 0144  
+                         l43 0156                           l37 013A                           l71 00E5  
+                         l72 00E8                           u10 00E5                           u11 00E4  
+                         u20 00F7                           u21 00F6                           u30 00FC  
+                         u31 00FB                           u40 0108                           u41 0107  
+                         fsr 0004                          l700 010A                          l650 0128  
+                        l660 0152                          l652 012E                          l670 00C1  
+                        l662 0154                          l654 0132                          l672 00C3  
+                        l648 013B                          l656 0136                          l664 0145  
+                        l680 00EE                          l674 00D1                          l658 014E  
+                        l666 0113                          l690 00FF                          l682 00F1  
+                        l676 00D3                          l668 00BE                          l692 0100  
+                        l684 00F7                          l686 00FC                          l694 0103  
+                        l678 00E9                          l696 0108                          l688 00FD  
+                        l698 0109                          _ISR 001E                          fsr0 0004  
+                        indf 0000                  _G_PwrOn_Mth 0113                         ?_ISR 0070  
+                       _PIE1 008C                         i1l96 006C                         i1l98 0066  
+                       _TMR0 0001                         u5_20 0022                         u5_21 0021  
+                       u6_20 0026                         u6_21 0025                         u7_20 002F  
+                       u7_21 002E                         u8_20 0037                         u8_21 0036  
+                       u9_20 0040                         u9_21 003F                         _main 00E9  
+                       btemp 007E                         start 000E                _G_PrtCnfg_Mth 013B  
+            ?_G_IntrCnfg_Mth 0070                        ??_ISR 0070                        ?_main 0070  
+                      _ANSEL 0188                        i1l104 00B5                        i1l710 0031  
+                      i1l702 001E                        i1l720 0046                        i1l712 0037  
+                      i1l704 0022                        i1l730 0078                        i1l722 004C  
+                      i1l714 0039                        i1l706 0026                        i1l740 00A4  
+                      i1l732 0087                        i1l724 0054                        i1l708 002F  
+                      i1l716 003A                        i1l742 00A6                        i1l734 0089  
+                      i1l726 0063                        i1l718 0040                        i1l744 00B4  
+                      i1l736 008F                        i1l728 0072                        i1l738 0095  
+                      _RCREG 001A                        u10_20 0046                        u10_21 0045  
+                      u11_20 004C                        u11_21 004B                        _RCSTA 0018  
+                      u12_20 0054                        u12_21 0053                        u13_20 0072  
+                      u13_21 0071                        u14_20 0078                        u14_21 0077  
+                      u15_20 008F                        u15_21 008E                        u16_20 0095  
+                      u16_21 0094                        _SPBRG 0099                        _PORTE 0009  
+                      _TRISE 0089                        _TXREG 0019                        _TXSTA 0098  
+                      pclath 000A               _G_UartCnfg_Mth 0128                        status 0003  
+                      wtemp0 007E               ?_G_PrtCnfg_Mth 0070              __initialization 0011  
+               __end_of_main 0113                       ??_main 0078       __end_of_G_UartCnfg_Mth 013B  
+                     _INTCON 000B             ??_L_TmrCnfig_Mth 0075                       saved_w 007E  
+            ?_G_UartCnfg_Mth 0070      __end_of__initialization 001A              ??_G_PrtCnfg_Mth 0075  
+             __pcstackCOMMON 0070                 ?_G_PwrOn_Mth 0070                   __pbssBANK0 0020  
+           ??_G_IntrCnfg_Mth 0075                   __pmaintext 00E9                   __pintentry 0004  
+G_ClrBuffr_Mth@L_BytCntr_Ui8 0077                      __ptext1 0113                      __ptext2 0145  
+                    __ptext3 0128                      __ptext4 013B                      __ptext5 014E  
+                    __ptext6 00BE                      __ptext7 001E                      clrloop0 0158  
+       end_of_initialization 001A                    _RCSTAbits 0018                    _PORTEbits 0009  
+           ??_G_UartCnfg_Mth 0075                    _TXSTAbits 0098          start_initialization 0011  
+                __end_of_ISR 00BE               _G_ClrBuffr_Mth 00BE        __end_of_G_PrtCnfg_Mth 0145  
+                  ___latbits 0002       __end_of_G_ClrBuffr_Mth 00E9              ?_G_ClrBuffr_Mth 0070  
+          interrupt_function 0004                    clear_ram0 0157                     _PIE1bits 008C  
+                   _PIR1bits 000C                     _UartStrk 0020                ??_G_PwrOn_Mth 0075  
+             _L_TmrCnfig_Mth 0145                   _INTCONbits 000B       __end_of_L_TmrCnfig_Mth 014E  
+        __end_of_G_PwrOn_Mth 0128                     intlevel1 0000               _G_IntrCnfg_Mth 014E  
+                 _OPTION_REG 0081             ??_G_ClrBuffr_Mth 0075              ?_L_TmrCnfig_Mth 0070  
+     __end_of_G_IntrCnfg_Mth 0157  
